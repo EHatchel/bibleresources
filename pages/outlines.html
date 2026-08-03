@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Outlines</title>
+
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+
+/* =========================
+   MENU
+========================= */
+
+
+.menu-button {
+
+    position: fixed;
+
+    top: 25px;
+    left: 25px;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:6px;
+
+    cursor:pointer;
+
+    z-index:30;
+
+}
+
+
+.menu-button span {
+
+    width:30px;
+
+    height:3px;
+
+    background:white;
+
+    border-radius:5px;
+
+    transition:.3s;
+
+}
+
+
+
+
+.menu {
+
+    position:fixed;
+
+    top:0;
+
+    left:-300px;
+
+    width:280px;
+
+    height:100vh;
+
+    background:
+    rgba(15,15,15,.95);
+
+    backdrop-filter:blur(10px);
+
+    padding-top:100px;
+
+    z-index:25;
+
+    transition:.4s ease;
+
+}
+
+
+
+.menu.active {
+
+    left:0;
+
+}
+
+
+
+.menu a {
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.4rem;
+
+    padding:20px 35px;
+
+    transition:.3s;
+
+}
+
+
+
+.menu a:hover {
+
+    background:rgba(255,255,255,.1);
+
+    padding-left:45px;
+
+}
+
+
+
+.menu-overlay {
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:20;
+
+}
+
+
+
+.menu-overlay.active {
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero {
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+.background {
+
+    position:absolute;
+
+    height:110%;
+
+    width:110%;
+
+    top:-5%;
+
+    left:-5%;
+
+    background-size:cover;
+
+    background-position:center;
+
+    filter:grayscale(100%);
+
+    z-index:0;
+
+    opacity:0;
+
+}
+
+
+
+
+.background.one {
+
+    background-image:url("images/group_1.jpeg");
+
+    opacity:1;
+
+    animation:
+
+    crossfadeOne 30s infinite,
+    slowZoom 30s infinite;
+
+}
+
+
+
+.background.two {
+
+    background-image:url("images/group_2.jpg");
+
+    animation:
+
+    crossfadeTwo 30s infinite,
+    slowZoom 30s infinite;
+
+}
+
+
+
+.background.three {
+
+    background-image:url("images/group_3.jpeg");
+
+    animation:
+
+    crossfadeThree 30s infinite,
+    slowZoom 30s infinite;
+
+}
+
+
+
+
+.hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:5;
+
+}
+
+
+
+
+.hero h1 {
+
+    position:relative;
+
+    z-index:10;
+
+    color:white;
+
+    text-align:center;
+
+    font-size:
+
+    clamp(2.5rem,6vw,5rem);
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    opacity:0;
+
+    animation:
+
+    textFade 2s ease forwards;
+
+    animation-delay:1s;
+
+}
+
+
+
+
+/* =========================
+   ABOUT
+========================= */
+
+
+.about {
+
+    min-height:80vh;
+
+    background:#111;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+
+.about h2 {
+
+    font-size:
+
+    clamp(2rem,5vw,4rem);
+
+    margin-bottom:20px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
+}
+
+
+
+.about p {
+
+    max-width:700px;
+
+    font-size:1.2rem;
+
+    line-height:1.7;
+
+    color:#ccc;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease .2s;
+
+}
+
+
+
+.about.show h2,
+.about.show p {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+
+@keyframes crossfadeOne {
+
+0%,30% {
+
+opacity:1;
+
+}
+
+33%,100% {
+
+opacity:0;
+
+}
+
+}
+
+
+
+@keyframes crossfadeTwo {
+
+0%,33% {
+
+opacity:0;
+
+}
+
+36%,63% {
+
+opacity:1;
+
+}
+
+66%,100% {
+
+opacity:0;
+
+}
+
+}
+
+
+
+@keyframes crossfadeThree {
+
+0%,66% {
+
+opacity:0;
+
+}
+
+69%,96% {
+
+opacity:1;
+
+}
+
+100% {
+
+opacity:0;
+
+}
+
+}
+
+
+
+@keyframes slowZoom {
+
+from {
+
+transform:scale(1);
+
+}
+
+to {
+
+transform:scale(1.08);
+
+}
+
+}
+
+
+
+@keyframes textFade {
+
+from {
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- MENU -->
+
+<div class="menu-button">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+<div class="menu-overlay"></div>
+
+
+<nav class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="pages/outlines.html">Outlines</a>
+
+<a href="pages/curriculums.html">Curriculums</a>
+
+<a href="pages/resources.html">Resources</a>
+
+</nav>
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="background one"></div>
+
+<div class="background two"></div>
+
+<div class="background three"></div>
+
+
+
+<h1>
+Outlines
+</h1>
+
+
+</section>
+
+
+
+
+
+<!-- ABOUT -->
+
+
+<section class="about">
+
+
+<h2>
+About Us
+</h2>
+
+
+<p>
+This is my small about us text.
+</p>
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+const menuButton =
+document.querySelector(".menu-button");
+
+
+const menu =
+document.querySelector(".menu");
+
+
+const overlay =
+document.querySelector(".menu-overlay");
+
+
+
+menuButton.onclick = () => {
+
+menu.classList.toggle("active");
+
+overlay.classList.toggle("active");
+
+};
+
+
+
+overlay.onclick = () => {
+
+menu.classList.remove("active");
+
+overlay.classList.remove("active");
+
+};
+
+
+
+
+
+const aboutSection =
+document.querySelector(".about");
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+aboutSection.classList.add("show");
+
+}
+
+
+});
+
+
+},{
+threshold:.3
+});
+
+
+
+observer.observe(aboutSection);
+
+
+
+</script>
+
+
+</body>
+
+</html>
