@@ -22,7 +22,35 @@
 
 <body>
 
+<!-- MENU -->
 
+<div class="menu-button">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+<div class="menu-overlay"></div>
+
+
+<nav class="menu">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+ 
+<a href="outlines.html">Outlines</a>
+
+<a href="curriculums.html">Curriculums</a>
+
+<a href="resources.html">Resources</a>
+
+</nav>
+
+  
 <section class="about-page">
 
 
@@ -55,7 +83,41 @@ Today, our group is built on the conviction of "Eternity Over Feelings." We beli
 
 </section>
 
+<script>
 
+const menuButton =
+document.querySelector(".menu-button");
+
+
+const menu =
+document.querySelector(".menu");
+
+
+const overlay =
+document.querySelector(".menu-overlay");
+
+
+
+menuButton.onclick = () => {
+
+    menu.classList.toggle("active");
+
+    overlay.classList.toggle("active");
+
+};
+
+
+
+overlay.onclick = () => {
+
+    menu.classList.remove("active");
+
+    overlay.classList.remove("active");
+
+};
+
+</script>
+  
 </body>
 
 </html>
