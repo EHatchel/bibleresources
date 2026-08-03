@@ -39,7 +39,7 @@ body {
 
 
 
-/* Background images */
+/* Background layers */
 
 .background {
 
@@ -56,17 +56,56 @@ body {
 
     filter: grayscale(100%);
 
-    animation:
-        imageFade 30s infinite,
-        slowZoom 30s infinite;
+}
 
-    z-index: -2;
+
+
+/* First image */
+
+.background.one {
+
+    background-image:
+    url("images/group_1.jpeg");
+
+    animation:
+    crossfadeOne 30s infinite,
+    slowZoom 30s infinite;
 
 }
 
 
 
-/* Second dark layer for text readability */
+/* Second image */
+
+.background.two {
+
+    background-image:
+    url("images/group_2.jpg");
+
+    animation:
+    crossfadeTwo 30s infinite,
+    slowZoom 30s infinite;
+
+}
+
+
+
+/* Third image */
+
+.background.three {
+
+    background-image:
+    url("images/group_3.jpeg");
+
+    animation:
+    crossfadeThree 30s infinite,
+    slowZoom 30s infinite;
+
+}
+
+
+
+/* Dark overlay */
 
 body::before {
 
@@ -80,96 +119,83 @@ body::before {
     background:
     rgba(0,0,0,0.65);
 
-    z-index: -1;
+    z-index: 5;
 
 }
 
 
 
+/* Crossfade timing */
 
-@keyframes imageFade {
+@keyframes crossfadeOne {
 
 
-0% {
+0%, 30% {
 
     opacity: 1;
 
-    background-image:
-    url("images/group 1.jpeg");
-
 }
 
 
-30% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 1.jpeg");
-
-}
-
-
-33% {
+33%, 100% {
 
     opacity: 0;
 
 }
 
 
-36% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 2.jpg");
-
 }
 
 
-63% {
 
-    opacity: 1;
-
-    background-image:
-    url("images/group 2.jpg");
-
-}
+@keyframes crossfadeTwo {
 
 
-66% {
+0%, 33% {
 
     opacity: 0;
 
 }
 
 
-69% {
+36%, 63% {
 
     opacity: 1;
-
-    background-image:
-    url("images/group 3.jpeg");
 
 }
 
 
-96% {
+66%, 100% {
+
+    opacity: 0;
+
+}
+
+
+}
+
+
+
+@keyframes crossfadeThree {
+
+
+0%, 66% {
+
+    opacity: 0;
+
+}
+
+
+69%, 96% {
 
     opacity: 1;
-
-    background-image:
-    url("images/group 3.jpeg");
 
 }
 
 
 100% {
 
-    opacity: 1;
-
-    background-image:
-    url("images/group 1.jpeg");
+    opacity: 0;
 
 }
 
@@ -180,6 +206,7 @@ body::before {
 
 
 @keyframes slowZoom {
+
 
 from {
 
@@ -194,6 +221,7 @@ to {
 
 }
 
+
 }
 
 
@@ -206,6 +234,8 @@ to {
     color: white;
 
     padding: 20px;
+
+    z-index: 10;
 
 }
 
@@ -252,7 +282,6 @@ opacity:1;
 
 
 
-
 @keyframes textFade {
 
 
@@ -287,7 +316,12 @@ transform: translateY(0);
 <body>
 
 
-<div class="background"></div>
+<div class="background one"></div>
+
+<div class="background two"></div>
+
+<div class="background three"></div>
+
 
 
 <div class="hero">
@@ -297,6 +331,7 @@ Bible Commentaries and Curriculums
 </h1>
 
 </div>
+
 
 
 </body>
