@@ -27,38 +27,6 @@
 
 <body>
 
-<script>
-
-const exploreSection =
-document.querySelector(".explore");
-
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-exploreSection.classList.add("show");
-
-}
-
-
-});
-
-
-},{
-threshold:.3
-});
-
-
-observer.observe(exploreSection);
-
-
-</script>
 
 <!-- MENU -->
 
