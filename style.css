@@ -261,58 +261,6 @@ h3 {
 
 }
 
-.about h2,
-.about p {
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-.about h2 {
-
-    font-size:clamp(2rem,5vw,4rem);
-
-    margin-bottom:20px;
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:1s ease;
-
-}
-
-.about p {
-
-    max-width:700px;
-
-    margin-bottom:20px;
-
-    font-size:1.2rem;
-
-    line-height:1.7;
-
-    color:#ccc;
-
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:1s ease .2s;
-
-}
-
-.about.show h2,
-.about.show p {
-
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
 /* =========================
    EXPLORE
 ========================= */
