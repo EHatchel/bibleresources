@@ -179,33 +179,34 @@ overlay.classList.remove("active");
 
 
 
-const sections =
-document.querySelectorAll(".about, .explore");
+const aboutSection =
+document.querySelector(".about");
 
 
 const observer =
 new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry=>{
 
-        if(entry.isIntersecting){
+entries.forEach(entry=>{
 
-            entry.target.classList.add("show");
 
-        }
+if(entry.isIntersecting){
 
-    });
+aboutSection.classList.add("show");
+
+}
+
+
+});
+
 
 },{
-    threshold:.3
+threshold:.3
 });
 
 
-sections.forEach(section=>{
 
-    observer.observe(section);
-
-});
+observer.observe(aboutSection);
 
 
 
