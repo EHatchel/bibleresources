@@ -124,6 +124,14 @@ body {
     font-style: italic;
 }
 
+.study-card pb {
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+
+    font-style: bold;
+}
 
 /* Back link */
 
