@@ -18,22 +18,38 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-
-    height: 100vh;
-    width: 100%;
-
-    overflow: hidden;
 
     font-family: Arial, Helvetica, sans-serif;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #111;
 
-    background: black;
+    color: white;
 
-    animation: pageFade 2s ease forwards;
+}
+
+
+
+/* HERO SECTION */
+
+.hero {
+
+    height: 100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
 
 }
 
@@ -43,35 +59,33 @@ body {
 
 .background {
 
-    position: absolute;
+    position:absolute;
 
-    height: 110%;
-    width: 110%;
+    height:110%;
+    width:110%;
 
-    top: -5%;
-    left: -5%;
+    top:-5%;
+    left:-5%;
 
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
 
-    filter: grayscale(100%);
+    background-position:center;
 
-    z-index: 0;
+    filter:grayscale(100%);
 
-    opacity: 0;
+    z-index:0;
+
+    opacity:0;
 
 }
 
 
 
-/* Image 1 */
-
 .background.one {
 
-    background-image:
-    url("images/group_1.jpeg");
+    background-image:url("images/group_1.jpeg");
 
-    opacity: 1;
+    opacity:1;
 
     animation:
     crossfadeOne 30s infinite,
@@ -80,13 +94,9 @@ body {
 }
 
 
-
-/* Image 2 */
-
 .background.two {
 
-    background-image:
-    url("images/group_2.jpg");
+    background-image:url("images/group_2.jpg");
 
     animation:
     crossfadeTwo 30s infinite,
@@ -95,13 +105,9 @@ body {
 }
 
 
-
-/* Image 3 */
-
 .background.three {
 
-    background-image:
-    url("images/group_3.jpeg");
+    background-image:url("images/group_3.jpeg");
 
     animation:
     crossfadeThree 30s infinite,
@@ -111,144 +117,17 @@ body {
 
 
 
-/* Dark overlay */
+.hero::before {
 
-body::before {
+    content:"";
 
-    content: "";
+    position:absolute;
 
-    position: absolute;
+    inset:0;
 
-    height: 100%;
-    width: 100%;
+    background:rgba(0,0,0,.65);
 
-    background:
-    rgba(0,0,0,0.65);
-
-    z-index: 5;
-
-}
-
-
-
-
-/* True crossfade animations */
-
-@keyframes crossfadeOne {
-
-
-0%, 30% {
-
-    opacity: 1;
-
-}
-
-
-33%, 100% {
-
-    opacity: 0;
-
-}
-
-
-}
-
-
-
-@keyframes crossfadeTwo {
-
-
-0%, 33% {
-
-    opacity: 0;
-
-}
-
-
-36%, 63% {
-
-    opacity: 1;
-
-}
-
-
-66%, 100% {
-
-    opacity: 0;
-
-}
-
-
-}
-
-
-
-@keyframes crossfadeThree {
-
-
-0%, 66% {
-
-    opacity: 0;
-
-}
-
-
-69%, 96% {
-
-    opacity: 1;
-
-}
-
-
-100% {
-
-    opacity: 0;
-
-}
-
-
-}
-
-
-
-
-/* Slow camera movement */
-
-@keyframes slowZoom {
-
-
-from {
-
-    transform: scale(1);
-
-}
-
-
-to {
-
-    transform: scale(1.08);
-
-}
-
-
-}
-
-
-
-
-/* Main title */
-
-.hero {
-
-    text-align: center;
-
-    color: white;
-
-    padding: 20px;
-
-    position: relative;
-
-    z-index: 10;
+    z-index:5;
 
 }
 
@@ -256,69 +135,185 @@ to {
 
 .hero h1 {
 
-    font-size:
-    clamp(2.5rem, 6vw, 5rem);
+    position:relative;
 
-    font-weight: 600;
+    z-index:10;
 
-    letter-spacing: 1px;
+    color:white;
 
-    opacity: 0;
+    text-align:center;
 
-    animation:
+    font-size:clamp(2.5rem,6vw,5rem);
 
-    textFade 2s ease forwards;
+    font-weight:600;
 
-    animation-delay: 1s;
+    letter-spacing:1px;
+
+    opacity:0;
+
+    animation:textFade 2s ease forwards;
+
+    animation-delay:1s;
 
 }
 
 
 
+/* ABOUT SECTION */
 
-/* Page fade */
 
-@keyframes pageFade {
+.about {
+
+    min-height:80vh;
+
+    background:#111;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+
+
+.about h2 {
+
+    font-size:clamp(2rem,5vw,4rem);
+
+    margin-bottom:20px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all 1s ease;
+
+}
+
+
+
+.about p {
+
+    max-width:700px;
+
+    font-size:1.2rem;
+
+    line-height:1.7;
+
+    color:#ccc;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all 1s ease .2s;
+
+}
+
+
+
+.about.show h2,
+.about.show p {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* Animations */
+
+
+@keyframes crossfadeOne {
+
+0%,30% {
+opacity:1;
+}
+
+33%,100% {
+opacity:0;
+}
+
+}
+
+
+@keyframes crossfadeTwo {
+
+0%,33% {
+opacity:0;
+}
+
+36%,63% {
+opacity:1;
+}
+
+66%,100% {
+opacity:0;
+}
+
+}
+
+
+
+@keyframes crossfadeThree {
+
+0%,66% {
+opacity:0;
+}
+
+69%,96% {
+opacity:1;
+}
+
+100% {
+opacity:0;
+}
+
+}
+
+
+
+@keyframes slowZoom {
 
 from {
-
-opacity:0;
-
+transform:scale(1);
 }
 
 to {
-
-opacity:1;
-
+transform:scale(1.08);
 }
 
 }
 
 
-
-
-/* Title fade */
 
 @keyframes textFade {
 
-
 from {
 
 opacity:0;
 
-transform: translateY(30px);
+transform:translateY(30px);
 
 }
-
 
 to {
 
 opacity:1;
 
-transform: translateY(0);
+transform:translateY(0);
 
 }
-
 
 }
 
@@ -326,11 +321,13 @@ transform: translateY(0);
 
 </style>
 
-
 </head>
 
 
 <body>
+
+
+<section class="hero">
 
 
 <div class="background one"></div>
@@ -341,13 +338,76 @@ transform: translateY(0);
 
 
 
-<div class="hero">
-
 <h1>
 Bible Commentaries and Curriculums
 </h1>
 
-</div>
+
+</section>
+
+
+
+
+
+<section class="about">
+
+
+<h2>
+About Us
+</h2>
+
+
+<p>
+This is my small about us text.
+</p>
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+const aboutSection =
+document.querySelector(".about");
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+aboutSection.classList.add("show");
+
+}
+
+
+});
+
+
+},
+
+
+{
+threshold:.3
+}
+
+);
+
+
+
+observer.observe(aboutSection);
+
+
+
+</script>
 
 
 </body>
