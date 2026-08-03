@@ -117,7 +117,36 @@ overlay.onclick = () => {
 };
 
 </script>
-  
+
+<script>
+
+const aboutContent =
+document.querySelector(".about-content");
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            aboutContent.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.3
+});
+
+
+observer.observe(aboutContent);
+
+
+</script>
+ 
 </body>
 
 </html>
