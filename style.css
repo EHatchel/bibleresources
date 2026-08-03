@@ -327,13 +327,21 @@ h3 {
 
 }
 
+
 .explore h2 {
 
     font-size:clamp(2rem,5vw,3.5rem);
 
     margin-bottom:50px;
 
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
 }
+
 
 .explore-grid {
 
@@ -349,6 +357,7 @@ h3 {
 
 }
 
+
 .explore-card {
 
     background:#222;
@@ -363,7 +372,24 @@ h3 {
 
     text-decoration:none;
 
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease .2s;
+
 }
+
+
+.explore.show h2,
+.explore.show .explore-card {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
 
 .explore-card:hover {
 
@@ -375,6 +401,7 @@ h3 {
 
 }
 
+
 .explore-card h3 {
 
     font-size:2rem;
@@ -382,6 +409,7 @@ h3 {
     margin-bottom:18px;
 
 }
+
 
 .explore-card p {
 
