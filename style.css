@@ -292,6 +292,84 @@ h3 {
 }
 
 /* =========================
+   EXPLORE
+========================= */
+
+.explore {
+
+    background:#1a1a1a;
+
+    padding:90px 20px;
+
+    text-align:center;
+
+}
+
+.explore h2 {
+
+    font-size:clamp(2rem,5vw,3.5rem);
+
+    margin-bottom:50px;
+
+}
+
+.explore-grid {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.explore-card {
+
+    background:#222;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:40px 30px;
+
+    transition:.3s ease;
+
+    text-decoration:none;
+
+}
+
+.explore-card:hover {
+
+    transform:translateY(-8px);
+
+    background:#292929;
+
+    border-color:rgba(255,255,255,.18);
+
+}
+
+.explore-card h3 {
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+}
+
+.explore-card p {
+
+    color:#bdbdbd;
+
+    line-height:1.7;
+
+}
+
+/* =========================
    ANIMATIONS
 ========================= */
 
