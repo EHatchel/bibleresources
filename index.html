@@ -197,32 +197,6 @@ threshold:.3
 });
 
 
-observer.observe(aboutSection);
-
-const exploreSection =
-document.querySelector(".explore");
-
-
-const exploreObserver =
-new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            exploreSection.classList.add("show");
-
-        }
-
-    });
-
-},{
-    threshold:.3
-});
-
-
-exploreObserver.observe(exploreSection);
-
 </script>
 
 
