@@ -175,30 +175,33 @@ const aboutSection =
 document.querySelector(".about");
 
 
+const sections =
+document.querySelectorAll(".about, .explore");
+
+
 const observer =
 new IntersectionObserver((entries)=>{
 
+    entries.forEach(entry=>{
 
-entries.forEach(entry=>{
+        if(entry.isIntersecting){
 
+            entry.target.classList.add("show");
 
-if(entry.isIntersecting){
+        }
 
-aboutSection.classList.add("show");
-
-}
-
-
-});
-
+    });
 
 },{
-threshold:.3
+    threshold:.3
 });
 
 
+sections.forEach(section=>{
 
-observer.observe(aboutSection);
+    observer.observe(section);
+
+});
 
 
 
