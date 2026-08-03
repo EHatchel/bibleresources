@@ -56,11 +56,13 @@ body {
 
     filter: grayscale(100%);
 
+    z-index: 0;
+
 }
 
 
 
-/* First image */
+/* Image 1 */
 
 .background.one {
 
@@ -75,7 +77,7 @@ body {
 
 
 
-/* Second image */
+/* Image 2 */
 
 .background.two {
 
@@ -90,7 +92,7 @@ body {
 
 
 
-/* Third image */
+/* Image 3 */
 
 .background.three {
 
@@ -102,6 +104,7 @@ body {
     slowZoom 30s infinite;
 
 }
+
 
 
 
@@ -125,7 +128,8 @@ body::before {
 
 
 
-/* Crossfade timing */
+
+/* Crossfade animations */
 
 @keyframes crossfadeOne {
 
@@ -205,6 +209,8 @@ body::before {
 
 
 
+/* Slow camera movement */
+
 @keyframes slowZoom {
 
 
@@ -227,6 +233,8 @@ to {
 
 
 
+/* Main text */
+
 .hero {
 
     text-align: center;
@@ -234,6 +242,8 @@ to {
     color: white;
 
     padding: 20px;
+
+    position: relative;
 
     z-index: 10;
 
@@ -263,6 +273,8 @@ to {
 
 
 
+/* Page fade */
+
 @keyframes pageFade {
 
 from {
@@ -281,6 +293,8 @@ opacity:1;
 
 
 
+
+/* Text entrance */
 
 @keyframes textFade {
 
@@ -331,7 +345,6 @@ Bible Commentaries and Curriculums
 </h1>
 
 </div>
-
 
 
 </body>
