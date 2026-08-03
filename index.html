@@ -204,6 +204,29 @@ observer.observe(aboutSection);
 
 </script>
 
+const exploreSection =
+document.querySelector(".explore");
+
+
+const exploreObserver =
+new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            exploreSection.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.3
+});
+
+
+exploreObserver.observe(exploreSection);
 
 </body>
 
