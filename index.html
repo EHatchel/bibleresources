@@ -18,28 +18,42 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-
-    height: 100vh;
-    width: 100%;
-
-    overflow: hidden;
 
     font-family: Arial, Helvetica, sans-serif;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #111;
 
-    background: black;
-
-    animation: pageFade 2s ease forwards;
+    color: white;
 
 }
 
 
 
-/* Background images */
+/* HERO SECTION */
+
+.hero {
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
 
 .background {
 
@@ -52,13 +66,14 @@ body {
     left: -5%;
 
     background-size: cover;
+
     background-position: center;
 
     filter: grayscale(100%);
 
     animation:
-        imageFade 30s infinite,
-        slowZoom 30s infinite;
+    imageFade 30s infinite,
+    slowZoom 30s infinite;
 
     z-index: -2;
 
@@ -66,19 +81,15 @@ body {
 
 
 
-/* Second dark layer for text readability */
-
-body::before {
+.hero::before {
 
     content: "";
 
     position: absolute;
 
-    height: 100%;
-    width: 100%;
+    inset: 0;
 
-    background:
-    rgba(0,0,0,0.65);
+    background: rgba(0,0,0,.65);
 
     z-index: -1;
 
@@ -86,96 +97,146 @@ body::before {
 
 
 
+.hero h1 {
+
+    font-size: clamp(2.5rem,6vw,5rem);
+
+    text-align:center;
+
+    max-width: 1000px;
+
+    opacity: 1;
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+
+
+/* ABOUT SECTION */
+
+.about {
+
+    min-height: 80vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+
+
+.about h2 {
+
+    font-size:clamp(2rem,5vw,4rem);
+
+    margin-bottom:20px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+
+}
+
+
+
+.about p {
+
+    max-width:700px;
+
+    font-size:1.2rem;
+
+    line-height:1.7;
+
+    color:#ccc;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity 1.2s ease .2s,
+    transform 1.2s ease .2s;
+
+}
+
+
+
+
+/* ACTIVE STATES */
+
+.show {
+
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+
+}
+
+
+
+.hide {
+
+    opacity:0;
+
+    transform:translateY(-50px);
+
+}
+
+
+
+
+
+/* BACKGROUND ANIMATION */
+
 
 @keyframes imageFade {
 
 
 0% {
 
-    opacity: 1;
-
-    background-image:
-    url("images/group 1.jpeg");
-
-}
-
-
-30% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 1.jpeg");
+background-image:url("images/group 1.jpeg");
 
 }
 
 
 33% {
 
-    opacity: 0;
-
-}
-
-
-36% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 2.jpg");
-
-}
-
-
-63% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 2.jpg");
+background-image:url("images/group 2.jpg");
 
 }
 
 
 66% {
 
-    opacity: 0;
-
-}
-
-
-69% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 3.jpeg");
-
-}
-
-
-96% {
-
-    opacity: 1;
-
-    background-image:
-    url("images/group 3.jpeg");
+background-image:url("images/group 3.jpeg");
 
 }
 
 
 100% {
 
-    opacity: 1;
-
-    background-image:
-    url("images/group 1.jpeg");
+background-image:url("images/group 1.jpeg");
 
 }
 
 
 }
-
 
 
 
@@ -183,99 +244,17 @@ body::before {
 
 from {
 
-    transform: scale(1);
-
-}
-
-
-to {
-
-    transform: scale(1.08);
-
-}
-
-}
-
-
-
-
-.hero {
-
-    text-align: center;
-
-    color: white;
-
-    padding: 20px;
-
-}
-
-
-
-.hero h1 {
-
-    font-size:
-    clamp(2.5rem, 6vw, 5rem);
-
-    font-weight: 600;
-
-    letter-spacing: 1px;
-
-    opacity: 0;
-
-    animation:
-
-    textFade 2s ease forwards;
-
-    animation-delay: 1s;
-
-}
-
-
-
-
-@keyframes pageFade {
-
-from {
-
-opacity:0;
+transform:scale(1);
 
 }
 
 to {
 
-opacity:1;
+transform:scale(1.08);
 
 }
 
 }
-
-
-
-
-
-@keyframes textFade {
-
-
-from {
-
-opacity:0;
-
-transform: translateY(30px);
-
-}
-
-
-to {
-
-opacity:1;
-
-transform: translateY(0);
-
-}
-
-
-}
-
 
 
 </style>
@@ -287,16 +266,110 @@ transform: translateY(0);
 <body>
 
 
+
+<section class="hero">
+
+
 <div class="background"></div>
 
 
-<div class="hero">
-
-<h1>
+<h1 id="heroTitle">
 Bible Commentaries and Curriculums
 </h1>
 
-</div>
+
+</section>
+
+
+
+
+<section class="about">
+
+
+<h2>
+About Us
+</h2>
+
+
+<p>
+This is my small about us text
+</p>
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+const heroTitle = document.getElementById("heroTitle");
+
+const aboutElements =
+document.querySelectorAll(".about h2, .about p");
+
+
+
+window.addEventListener("scroll", () => {
+
+
+let scrollPosition =
+window.scrollY;
+
+
+
+let screenHeight =
+window.innerHeight;
+
+
+
+if(scrollPosition > screenHeight * .35) {
+
+
+heroTitle.classList.add("hide");
+
+
+}
+else {
+
+
+heroTitle.classList.remove("hide");
+
+
+}
+
+
+
+
+
+aboutElements.forEach(element => {
+
+
+let position =
+element.getBoundingClientRect().top;
+
+
+
+if(position < screenHeight * .75) {
+
+
+element.classList.add("show");
+
+
+}
+
+
+});
+
+
+});
+
+
+
+</script>
+
 
 
 </body>
