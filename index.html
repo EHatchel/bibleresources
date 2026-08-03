@@ -22,6 +22,7 @@ body {
 
     height: 100vh;
     width: 100%;
+
     overflow: hidden;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -30,33 +31,42 @@ body {
     justify-content: center;
     align-items: center;
 
-    animation: pageFade 1.5s ease forwards;
+    background: black;
+
+    animation: pageFade 2s ease forwards;
 
 }
 
 
-/* Background slideshow */
+
+/* Background images */
 
 .background {
 
     position: absolute;
 
-    height: 100%;
-    width: 100%;
+    height: 110%;
+    width: 110%;
+
+    top: -5%;
+    left: -5%;
 
     background-size: cover;
     background-position: center;
 
     filter: grayscale(100%);
 
-    animation: slideshow 24s infinite;
+    animation:
+        imageFade 30s infinite,
+        slowZoom 30s infinite;
 
     z-index: -2;
 
 }
 
 
-/* Dark overlay */
+
+/* Second dark layer for text readability */
 
 body::before {
 
@@ -67,54 +77,125 @@ body::before {
     height: 100%;
     width: 100%;
 
-    background: rgba(0,0,0,0.65);
+    background:
+    rgba(0,0,0,0.65);
 
     z-index: -1;
 
 }
 
 
-/* Background images */
 
-@keyframes slideshow {
+
+@keyframes imageFade {
 
 
 0% {
 
-background-image: url("images/ayden_teaching.png");
+    opacity: 1;
+
+    background-image:
+    url("images/group 1.jpeg");
 
 }
 
 
-25% {
+30% {
 
-background-image: url("images/group 1.jpeg");
+    opacity: 1;
 
-}
-
-
-50% {
-
-background-image: url("images/group 2.jpg");
+    background-image:
+    url("images/group 1.jpeg");
 
 }
 
 
-75% {
+33% {
 
-background-image: url("images/group 3.jpeg");
+    opacity: 0;
+
+}
+
+
+36% {
+
+    opacity: 1;
+
+    background-image:
+    url("images/group 2.jpg");
+
+}
+
+
+63% {
+
+    opacity: 1;
+
+    background-image:
+    url("images/group 2.jpg");
+
+}
+
+
+66% {
+
+    opacity: 0;
+
+}
+
+
+69% {
+
+    opacity: 1;
+
+    background-image:
+    url("images/group 3.jpeg");
+
+}
+
+
+96% {
+
+    opacity: 1;
+
+    background-image:
+    url("images/group 3.jpeg");
 
 }
 
 
 100% {
 
-background-image: url("images/ayden_teaching.png");
+    opacity: 1;
+
+    background-image:
+    url("images/group 1.jpeg");
 
 }
 
 
 }
+
+
+
+
+@keyframes slowZoom {
+
+from {
+
+    transform: scale(1);
+
+}
+
+
+to {
+
+    transform: scale(1.08);
+
+}
+
+}
+
 
 
 
@@ -124,13 +205,16 @@ background-image: url("images/ayden_teaching.png");
 
     color: white;
 
+    padding: 20px;
+
 }
 
 
 
 .hero h1 {
 
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size:
+    clamp(2.5rem, 6vw, 5rem);
 
     font-weight: 600;
 
@@ -138,11 +222,14 @@ background-image: url("images/ayden_teaching.png");
 
     opacity: 0;
 
-    animation: textFade 1.5s ease forwards;
+    animation:
 
-    animation-delay: .8s;
+    textFade 2s ease forwards;
+
+    animation-delay: 1s;
 
 }
+
 
 
 
@@ -164,6 +251,8 @@ opacity:1;
 
 
 
+
+
 @keyframes textFade {
 
 
@@ -171,7 +260,7 @@ from {
 
 opacity:0;
 
-transform:translateY(25px);
+transform: translateY(30px);
 
 }
 
@@ -180,12 +269,13 @@ to {
 
 opacity:1;
 
-transform:translateY(0);
+transform: translateY(0);
 
 }
 
 
 }
+
 
 
 </style>
