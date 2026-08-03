@@ -89,7 +89,18 @@ body {
 
 }
 
+.study-card h3 {
 
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.8rem;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    text-decoration: underline;
+}
 
 /* Text */
 
