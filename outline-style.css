@@ -156,7 +156,33 @@ body {
 
 }
 
+/* Back to Top Display */
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #2b2b2b;
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    transition: opacity 0.3s ease;
+}
+
+#backToTop:hover {
+    opacity: 0.8;
+}
 
 /* Mobile */
 
