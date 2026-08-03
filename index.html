@@ -145,41 +145,6 @@ overlay.classList.remove("active");
 
 };
 
-
-
-
-
-const aboutSection =
-document.querySelector(".about");
-
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-aboutSection.classList.add("show");
-
-}
-
-
-});
-
-
-},{
-threshold:.3
-});
-
-
-
-observer.observe(aboutSection);
-
-
-
 </script>
 
 
