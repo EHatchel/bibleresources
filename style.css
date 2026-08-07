@@ -461,7 +461,7 @@ h3 {
 
     background:#E3DACA;
     color: #425A4E;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 2rem;
     padding:90px 20px;
     text-align:center;
 
