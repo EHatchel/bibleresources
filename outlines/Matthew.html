@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>1 Timothy</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../style.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- MENU -->
+
+<div class="menu-button">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+<div class="menu-overlay"></div>
+
+
+<nav class="menu">
+
+<a href="../index.html">Home</a>
+ 
+<a href="../outlines.html">Outlines</a>
+
+<a href="../curriculums.html">Curriculums</a>
+
+<a href="../resources.html">Resources</a>
+
+<a href="../about.html">About</a>
+ 
+</nav>
+
+
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+1 Timothy
+</h1>
+
+</section>
+
+<!-- MESSAGES -->
+
+<section class="outline"> 
+ 
+<h3>
+<a href="messages/1-timothy-2-9-15.html">1 Timothy 2:9-15 - God's Design for Godly Women</a><br>
+<a href="messages/1-Timothy-3-1-13.html">1 Timothy 3:1-13 - Leadership Measured by Character</a><br>
+</h3>
+
+</section>
+
+
+<script>
+
+
+const menuButton =
+document.querySelector(".menu-button");
+
+
+const menu =
+document.querySelector(".menu");
+
+
+const overlay =
+document.querySelector(".menu-overlay");
+
+
+
+menuButton.onclick = () => {
+
+menu.classList.toggle("active");
+
+overlay.classList.toggle("active");
+
+};
+
+
+
+overlay.onclick = () => {
+
+menu.classList.remove("active");
+
+overlay.classList.remove("active");
+
+};
+
+
+
+
+
+const aboutSection =
+document.querySelector(".about");
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+aboutSection.classList.add("show");
+
+}
+
+
+});
+
+
+},{
+threshold:.3
+});
+
+
+
+observer.observe(aboutSection);
+
+
+
+</script>
+
+
+</body>
+
+</html>
