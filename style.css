@@ -524,6 +524,11 @@ h3 {
     font-size: 1.15rem;
 }
 
+/* Single Column */
+.message-grid.single-column {
+    grid-template-columns: minmax(0, 700px);
+    justify-content: center;
+}
 
 /* Hover effect */
 
