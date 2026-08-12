@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,26 +8,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <title>Philemon</title>
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
-
 <link rel="stylesheet" href="../style.css">
-
 
 </head>
 
 
 <body>
-
 
 
 <!-- MENU -->
@@ -46,7 +41,7 @@
 <nav class="menu">
 
 <a href="../index.html">Home</a>
- 
+
 <a href="../outlines.html">Outlines</a>
 
 <a href="../curriculums.html">Curriculums</a>
@@ -54,10 +49,8 @@
 <a href="../resources.html">Resources</a>
 
 <a href="../about.html">About</a>
- 
+
 </nav>
-
-
 
 
 
@@ -71,14 +64,17 @@ Philemon
 
 </section>
 
+
 <!-- MESSAGES -->
 
 <section class="outline">
 
-    <div class="message-grid">
+    <div class="message-grid single-column">
 
         <!-- PART 1 -->
+
         <div class="message-section">
+
             <h3>Philemon</h3>
 
             <a href="messages/Philemon_overview.html">
@@ -92,17 +88,15 @@ Philemon
             </a>
 
             <a href="messages/Philemon_1-8-25.html">
-                <span class="passage">Philemon 8-25</span>
+                <span class="passage">Philemon 8–25</span>
                 <span class="title">Forgive and Gain</span>
             </a>
 
         </div>
 
-
     </div>
 
 </section>
-```
 
 
 
@@ -142,8 +136,6 @@ overlay.classList.remove("active");
 
 
 
-
-
 const aboutSection =
 document.querySelector(".about");
 
@@ -151,9 +143,7 @@ document.querySelector(".about");
 const observer =
 new IntersectionObserver((entries)=>{
 
-
 entries.forEach(entry=>{
-
 
 if(entry.isIntersecting){
 
@@ -161,18 +151,16 @@ aboutSection.classList.add("show");
 
 }
 
-
 });
-
 
 },{
 threshold:.3
 });
 
 
-
-observer.observe(aboutSection);
-
+if (aboutSection) {
+    observer.observe(aboutSection);
+}
 
 
 </script>
@@ -181,3 +169,4 @@ observer.observe(aboutSection);
 </body>
 
 </html>
+```
