@@ -546,6 +546,7 @@ h3 {
     justify-content: center;
     gap: 12px;
     margin: 40px auto;
+    animation:textFade 2s ease forwards;
     font-family: "Source Sans 3", sans-serif;
     font-size: 1rem;
 }
