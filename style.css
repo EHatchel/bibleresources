@@ -547,7 +547,6 @@ h3 {
     gap: 12px;
     margin: 40px auto;
     animation:textFade 2s ease forwards;
-    animation-delay:0.5s;
     font-family: "Source Sans 3", sans-serif;
     font-size: 1rem;
 }
