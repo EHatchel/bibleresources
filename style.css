@@ -584,6 +584,12 @@ h3 {
     opacity: 0.85;
 }
 
+.study-selector h3 {
+
+    font-size:2rem;
+    margin-bottom:18px;
+
+}
 
 /* ================================
    MOBILE
