@@ -175,6 +175,70 @@ observer.observe(aboutSection);
 
 </script>
 
+<!-- CHOOSE BOOK DROPDOWN -->
+<script>
+const bookSelect = document.getElementById("bookSelect");
+const chapterSelect = document.getElementById("chapterSelect");
+const goButton = document.getElementById("goButton");
+
+const chapters = {
+    "ephesians": 6,
+    "philippians": 4,
+    "colossians": 4,
+    "1-timothy": 6,
+    "philemon": 1
+};
+
+bookSelect.addEventListener("change", function () {
+
+    const book = this.value;
+
+    chapterSelect.innerHTML =
+        '<option value="">Select a chapter</option>';
+
+    if (book && chapters[book]) {
+
+        for (let i = 1; i <= chapters[book]; i++) {
+
+            const option = document.createElement("option");
+
+            option.value = i;
+            option.textContent = `Chapter ${i}`;
+
+            chapterSelect.appendChild(option);
+        }
+
+        chapterSelect.disabled = false;
+
+    } else {
+
+        chapterSelect.disabled = true;
+        goButton.disabled = true;
+    }
+});
+
+
+chapterSelect.addEventListener("change", function () {
+
+    goButton.disabled = !this.value;
+
+});
+
+
+goButton.addEventListener("click", function () {
+
+    const book = bookSelect.value;
+    const chapter = chapterSelect.value;
+
+    if (book && chapter) {
+
+        window.location.href =
+            `${book}.html#chapter-${chapter}`;
+
+    }
+
+});
+</script>
 
 </body>
 
