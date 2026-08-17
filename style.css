@@ -190,6 +190,8 @@ h3 {
 
     padding:80px 20px;
 
+    animation:textFade 2s ease forwards;
+
 }
 
 .about::before {
