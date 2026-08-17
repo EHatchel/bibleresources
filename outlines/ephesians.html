@@ -271,27 +271,6 @@ threshold:.3
 
 observer.observe(aboutSection);
 
- // ==========================
-    // CHAPTER HIGHLIGHT
-    // ==========================
-
-    const targetId = window.location.hash.substring(1);
-
-    if (targetId) {
-
-        const target = document.getElementById(targetId);
-
-        if (target) {
-
-            target.classList.add("chapter-highlight");
-
-            setTimeout(() => {
-                target.classList.remove("chapter-highlight");
-            }, 3000);
-
-        }
-    }
-
 </script>
  
 </body>
