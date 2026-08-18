@@ -271,9 +271,8 @@ h3 {
 .explore {
 
     background:#1a1a1a;
-
+    animation:textFade 2s ease forwards;
     padding:90px 20px;
-
     text-align:center;
 
 }
