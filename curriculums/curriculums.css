@@ -1,0 +1,213 @@
+/* ==========================
+   OUTLINE PAGE STYLE
+========================== */
+
+
+body {
+    margin: 0;
+    background: #E3DACA;
+    color: #425A4E;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+
+/* Main container */
+
+.study-container {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 60px 25px;
+
+}
+
+/* Title */
+
+.study-title {
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    margin-bottom: 10px;
+
+    color: #425A4E;
+
+}
+
+.study-subtitle {
+
+    text-align: center;
+
+    font-size: 1.2rem;
+
+    color: #425A4E;
+
+    margin-bottom: 50px;
+
+}
+
+
+/* Cards */
+
+.study-card {
+
+    background: #EFE6D6;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0,0,0,.08);
+
+}
+
+/* Section headings */
+
+.study-card h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.8rem;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+}
+
+.study-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.4rem;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+
+}
+
+/* Text */
+
+.study-card p {
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+
+}
+
+.study-card pi {
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+.study-card pb {
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+
+    font-weight: bold;
+}
+
+.study-card blockquote {
+   
+        border-left: 5px solid #555;
+        padding-left: 20px;
+        font-style: italic;
+        margin: 25px 0;
+    }
+
+
+/* Back link */
+
+.back-link {
+
+    display: inline-block;
+
+    margin-bottom: 35px;
+
+    color: #425A4E;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+}
+
+
+.back-link:hover {
+
+    text-decoration: underline;
+
+}
+
+/* Back to Top Display */
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #425A4E;
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    transition: opacity 0.3s ease;
+}
+
+#backToTop:hover {
+    opacity: 0.8;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .study-container {
+
+        padding: 35px 18px;
+
+    }
+
+
+    .study-card {
+
+        padding: 22px;
+
+    }
+
+
+    .study-card h2 {
+
+        font-size: 1.5rem;
+
+    }
+
+}
