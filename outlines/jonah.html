@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Jonah</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../style.css">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- MENU -->
+
+<div class="menu-button">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+<div class="menu-overlay"></div>
+
+
+<nav class="menu">
+
+<a href="../index.html">Home</a>
+ 
+<a href="../outlines.html">Outlines</a>
+
+<a href="../curriculums.html">Curriculums</a>
+
+<a href="../resources.html">Resources</a>
+
+<a href="../about.html">About</a>
+ 
+</nav>
+
+
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+Jonah
+</h1>
+
+</section>
+
+<!-- MESSAGES -->
+
+<section class="outline">
+
+    <div class="message-grid">
+
+        <!-- PART 1 -->
+        <div class="message-section" id="chapter-1">
+            <h3>Jonah 1</h3>
+
+            <a href="messages/Colossians_Overview.html">
+                <span class="passage">Overview</span>
+                <span class="title">Colossians Overview</span>
+            </a>
+
+            <a href="messages/colossians-1-1-6.html">
+                <span class="passage">Colossians 1:1–6</span>
+                <span class="title">NOT IN YET</span>
+            </a>
+
+            <a href="messages/colossians-1-7-14.html">
+                <span class="passage">Colossians 1:7-14</span>
+                <span class="title">Prayer to Walk Worthy</span>
+            </a>
+
+            <a href="messages/colossians-1-15-23.html">
+                <span class="passage">Colossians 1:15-23</span>
+                <span class="title">Christ's Superiority</span>
+            </a>
+         
+             <a href="messages/colossians-1-24-29.html">
+                <span class="passage">Colossians 1:24-29</span>
+                <span class="title">Faithful in the Calling</span>
+            </a>
+        </div>
+
+
+        <!-- PART 2 -->
+        <div class="message-section" id="chapter-2">
+            <h3>Jonah 2</h3>
+
+            <a href="messages/colossians-2-1-10.html">
+                <span class="passage">Colossians 2:1-10</span>
+                <span class="title">Christ Is Enough</span>
+            </a>
+
+            <a href="messages/colossians-2-11-15.html">
+                <span class="passage">Colossians 2:11-15</span>
+                <span class="title">Dead to Sin, Alive in Christ</span>
+            </a>
+
+            <a href="messages/colossians-2-16-23.html">
+                <span class="passage">Colossians 2:16-23</span>
+                <span class="title">Old Vs New Covenant</span>
+            </a>
+        </div>
+
+<!-- PART 3 -->
+        <div class="message-section" id="chapter-3">
+            <h3>Jonah 3</h3>
+
+            <a href="messages/colossians-3-1-7.html">
+                <span class="passage">Colossians 3:1-7</span>
+                <span class="title">More Christ, Less Sin</span>
+            </a>
+
+            <a href="messages/colossians-3-8-17.html">
+                <span class="passage">Colossians 3:8-17</span>
+                <span class="title">And nowwwww!</span>
+            </a>
+
+            <a href="messages/colossians-3-18-4-1.html">
+                <span class="passage">Colossians 3:18-4:1</span>
+                <span class="title">Submission is the Key </span>
+            </a>
+        </div>
+
+     <!-- PART 3 -->
+        <div class="message-section" id="chapter-4">
+            <h3>Jonah 4</h3>
+
+            <a href="messages/colossians-4-2-6.html">
+                <span class="passage">Colossians 4:2-6</span>
+                <span class="title">Pray, Walk, Speak</span>
+            </a>
+
+            <a href="messages/colossians-4-7-X.html">
+                <span class="passage">Colossians 4:7-X</span>
+                <span class="title">NOT IN YET</span>
+            </a>
+
+        </div>
+     
+<script>
+
+
+const menuButton =
+document.querySelector(".menu-button");
+
+
+const menu =
+document.querySelector(".menu");
+
+
+const overlay =
+document.querySelector(".menu-overlay");
+
+
+
+menuButton.onclick = () => {
+
+menu.classList.toggle("active");
+
+overlay.classList.toggle("active");
+
+};
+
+
+
+overlay.onclick = () => {
+
+menu.classList.remove("active");
+
+overlay.classList.remove("active");
+
+};
+
+
+
+
+
+const aboutSection =
+document.querySelector(".about");
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+aboutSection.classList.add("show");
+
+}
+
+
+});
+
+
+},{
+threshold:.3
+});
+
+
+
+observer.observe(aboutSection);
+
+
+
+</script>
+
+
+</body>
+
+</html>
