@@ -587,11 +587,15 @@ h3 {
 ================================ */
 
 .resources-section {
+    width: 100%;
+    background-color: #f6f1e7;
+    padding: 80px 30px;
+    box-sizing: border-box;
+}
+
+.resources-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 30px;
-    text-align: center;
-    background-color: #f6f1e7;
 }
 
 .resources-section h1 {
