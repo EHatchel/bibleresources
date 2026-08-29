@@ -582,56 +582,62 @@ h3 {
 
 }
 
-/* ================================
-   RESOURCES
-================================ */
+/* =========================
+   RESOURCES SECTION
+========================= */
 
 .resources-section {
+    background: #f6f1e7;
     width: 100%;
-    background-color: #f6f1e7;
-    padding: 80px 30px;
+    padding: 80px 6%;
     box-sizing: border-box;
 }
 
-.resources-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.resources-section h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 15px;
-}
-
-.resources-intro {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 1.1rem;
+.resources-section h2 {
+    text-align: center;
     margin-bottom: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #2b2b2b;
 }
 
-.resource-grid {
+.resources-grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 40px;
 }
 
 .resource-card {
-    position: relative;
-    display: block;
-    height: 300px;
-    overflow: hidden;
     text-decoration: none;
-    border-radius: 10px;
+    color: #2b2b2b;
+    display: block;
 }
 
-.resource-card img {
+.resource-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+}
+
+.resource-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     display: block;
-    transition: transform 0.5s ease;
+    object-fit: contain;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
+
+/* Desktop hover overlay */
 
 .resource-overlay {
     position: absolute;
@@ -639,45 +645,55 @@ h3 {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    padding: 25px;
     text-align: center;
+    padding: 25px;
 
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(43, 43, 43, 0.82);
 
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    box-sizing: border-box;
 }
 
-.resource-overlay h2 {
+.resource-overlay h3 {
     font-family: 'Playfair Display', serif;
-    color: white;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+    color: #f6f1e7;
 }
 
 .resource-overlay p {
     font-family: 'Source Sans 3', sans-serif;
-    color: white;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #f6f1e7;
 }
 
-.resource-overlay span {
-    font-family: 'Source Sans 3', sans-serif;
-    color: white;
-    font-weight: 600;
+
+/* Hover animation */
+
+.resource-card:hover .resource-image img {
+    transform: scale(1.06);
 }
 
 .resource-card:hover .resource-overlay {
     opacity: 1;
+    transform: translateY(0);
 }
 
-.resource-card:hover img {
-    transform: scale(1.05);
-}
 
-.resource-mobile-name {
+/* Mobile resource name */
+
+.mobile-resource-name {
     display: none;
 }
 
@@ -706,33 +722,40 @@ h3 {
     }
 }
 
-@media (max-width: 800px) {
+/* =========================
+  MOBILE (RESOURCES)
+========================= */
 
-    .resource-grid {
+@media (max-width: 700px) {
+
+    .resources-section {
+        padding: 60px 20px;
+    }
+
+    .resources-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
     }
 
-}
-
-@media (max-width: 550px) {
-
-    .resource-grid {
-        grid-template-columns: 1fr;
+    .resource-overlay {
+        display: none;
     }
 
-    .resource-card {
-        height: 250px;
+    .resource-card:hover .resource-image img {
+        transform: none;
     }
 
-    .resource-mobile-name {
+    .mobile-resource-name {
         display: block;
-        font-family: 'Playfair Display', serif;
-        font-size: 1.5rem;
-        color: #2b2b2b;
-        text-align: center;
-        margin: 12px 0 30px;
-}
 
+        text-align: center;
+
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+
+        margin: 12px 0 0;
+    }
+}
 
 
 /* =========================
