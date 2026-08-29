@@ -594,7 +594,7 @@ h3 {
 }
 
 .resources-container {
-    max-width: 1200px;
+    
     margin: 0 auto;
 }
 
@@ -612,6 +612,7 @@ h3 {
 
 .resource-grid {
     display: grid;
+    max-width: 1200px;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
