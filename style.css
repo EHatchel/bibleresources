@@ -677,6 +677,10 @@ h3 {
     transform: scale(1.05);
 }
 
+.resource-mobile-name {
+    display: none;
+}
+
 /* ================================
    MOBILE
 ================================ */
@@ -720,7 +724,16 @@ h3 {
         height: 250px;
     }
 
+    .resource-mobile-name {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: #2b2b2b;
+        text-align: center;
+        margin: 12px 0 30px;
 }
+
+
 
 /* =========================
    ANIMATIONS
