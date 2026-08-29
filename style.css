@@ -698,6 +698,26 @@ h3 {
     }
 }
 
+@media (max-width: 800px) {
+
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+        height: 250px;
+    }
+
+}
+
 /* =========================
    ANIMATIONS
 ========================= */
