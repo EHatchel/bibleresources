@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -7,46 +8,34 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <title>Outlines</title>
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-
 
 <link rel="stylesheet" href="style.css">
 
-
 </head>
 
-
-
 <body>
-
 
 <!-- MENU -->
 
 <div class="menu-button">
 
-<span></span>
-<span></span>
-<span></span>
+<span></span> <span></span> <span></span>
 
 </div>
 
-
 <div class="menu-overlay"></div>
-
 
 <nav class="menu">
 
 <a href="index.html">Home</a>
- 
+
 <a href="outlines.html">Outlines</a>
 
 <a href="curriculums.html">Curriculums</a>
@@ -54,20 +43,21 @@
 <a href="resources.html">Resources</a>
 
 <a href="about.html">About</a>
- 
+
 </nav>
 
-
 <!-- HERO -->
+
 <section class="hero">
 
 <h1>
 Outlines
 </h1>
- 
+
 </section>
 
 <!-- OUTLINE LIST -->
+
 <section>
 
 <div class="study-selector">
@@ -75,47 +65,46 @@ Outlines
   <h3>
    What are we studying today?
   </h3>
- 
-</div> 
-
- <div class="study-selector">
-   
-    <select id="bookSelect">
-        <option value="">Select a book</option>
-        <option value="jonah">Jonah</option>
-        <option value="Matthew">Matthew</option>
-        <option value="ephesians">Ephesians</option>
-        <option value="colossians">Colossians</option>
-        <option value="1_timothy">1 Timothy</option>
-        <option value="philemon">Philemon</option>
-    </select>
-
-   
-    <select id="chapterSelect" disabled>
-        <option value="">Select a chapter</option>
-    </select>
-
-    <button id="goButton" disabled>Go</button>
 
 </div>
- 
+
+<div class="study-selector">
+
+```
+<select id="bookSelect">
+    <option value="">Select a book</option>
+    <option value="jonah">Jonah</option>
+    <option value="Matthew">Matthew</option>
+    <option value="ephesians">Ephesians</option>
+    <option value="colossians">Colossians</option>
+    <option value="1_timothy">1 Timothy</option>
+    <option value="philemon">Philemon</option>
+</select>
+
+
+<select id="chapterSelect" disabled>
+    <option value="">Select a chapter</option>
+</select>
+
+<button id="goButton" disabled>Go</button>
+```
+
+</div>
+
 </section>
 
- 
-<script>
+<!-- MENU SCRIPT -->
 
+<script>
 
 const menuButton =
 document.querySelector(".menu-button");
 
-
 const menu =
 document.querySelector(".menu");
 
-
 const overlay =
 document.querySelector(".menu-overlay");
-
 
 
 menuButton.onclick = () => {
@@ -127,7 +116,6 @@ overlay.classList.toggle("active");
 };
 
 
-
 overlay.onclick = () => {
 
 menu.classList.remove("active");
@@ -136,48 +124,16 @@ overlay.classList.remove("active");
 
 };
 
-
-
-
-
-const aboutSection =
-document.querySelector(".about");
-
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-aboutSection.classList.add("show");
-
-}
-
-
-});
-
-
-},{
-threshold:.3
-});
-
-
-
-observer.observe(aboutSection);
-
-
-
 </script>
 
 <!-- CHOOSE BOOK DROPDOWN -->
+
 <script>
+
 const bookSelect = document.getElementById("bookSelect");
 const chapterSelect = document.getElementById("chapterSelect");
 const goButton = document.getElementById("goButton");
+
 
 const chapters = {
     "jonah": 4,
@@ -188,14 +144,22 @@ const chapters = {
     "philemon": 1
 };
 
+
+// When a book is selected
+
 bookSelect.addEventListener("change", function () {
 
     const book = this.value;
 
+    // Reset chapters
+
     chapterSelect.innerHTML =
         '<option value="">Select a chapter</option>';
 
+
     if (book && chapters[book]) {
+
+        // Add the chapters for the selected book
 
         for (let i = 1; i <= chapters[book]; i++) {
 
@@ -205,29 +169,36 @@ bookSelect.addEventListener("change", function () {
             option.textContent = `Chapter ${i}`;
 
             chapterSelect.appendChild(option);
+
         }
 
         chapterSelect.disabled = false;
 
+        // Enable Go as soon as a book is selected
+
+        goButton.disabled = false;
+
     } else {
 
         chapterSelect.disabled = true;
+
         goButton.disabled = true;
+
     }
-});
-
-
-chapterSelect.addEventListener("change", function () {
-
-    goButton.disabled = !this.value;
 
 });
 
+
+// Go button
 
 goButton.addEventListener("click", function () {
 
     const book = bookSelect.value;
     const chapter = chapterSelect.value;
+
+
+    // If both book AND chapter are selected,
+    // go directly to that chapter.
 
     if (book && chapter) {
 
@@ -236,10 +207,21 @@ goButton.addEventListener("click", function () {
 
     }
 
+
+    // If only a book is selected,
+    // go to the beginning of that book's outline.
+
+    else if (book) {
+
+        window.location.href =
+            `outlines/${book}.html`;
+
+    }
+
 });
+
 </script>
 
- 
 </body>
 
 </html>
