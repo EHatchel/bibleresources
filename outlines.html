@@ -124,14 +124,13 @@ overlay.classList.remove("active");
 
 </script>
 
+
 <!-- CHOOSE BOOK DROPDOWN -->
 
 <script>
-
 const bookSelect = document.getElementById("bookSelect");
 const chapterSelect = document.getElementById("chapterSelect");
 const goButton = document.getElementById("goButton");
-
 
 const chapters = {
     "jonah": 4,
@@ -142,83 +141,44 @@ const chapters = {
     "philemon": 1
 };
 
-
 // When a book is selected
-
 bookSelect.addEventListener("change", function () {
-
     const book = this.value;
-
-    // Reset chapters
 
     chapterSelect.innerHTML =
         '<option value="">Select a chapter</option>';
 
-
     if (book && chapters[book]) {
-
-        // Add the chapters for the selected book
-
         for (let i = 1; i <= chapters[book]; i++) {
-
             const option = document.createElement("option");
-
             option.value = i;
             option.textContent = `Chapter ${i}`;
-
             chapterSelect.appendChild(option);
-
         }
 
         chapterSelect.disabled = false;
-
-        // Enable Go as soon as a book is selected
-
         goButton.disabled = false;
-
     } else {
-
         chapterSelect.disabled = true;
-
         goButton.disabled = true;
-
     }
-
 });
 
-
 // Go button
-
 goButton.addEventListener("click", function () {
-
     const book = bookSelect.value;
     const chapter = chapterSelect.value;
 
-
-    // If both book AND chapter are selected,
-    // go directly to that chapter.
-
     if (book && chapter) {
-
         window.location.href =
-            `outlines/${book}.html#chapter-${chapter}`;
-
-    }
-
-
-    // If only a book is selected,
-    // go to the beginning of that book's outline.
-
-    else if (book) {
-
+            `outlines/${book}.html#chapter-${chapter}?center=true`;
+    } else if (book) {
         window.location.href =
             `outlines/${book}.html`;
-
     }
-
 });
-
 </script>
+
 
 </body>
 
