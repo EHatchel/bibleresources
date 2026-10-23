@@ -91,39 +91,43 @@ Outlines
 
 </section>
 
-<!-- MENU SCRIPT -->
 
 <script>
+const menuButton = document.querySelector(".menu-button");
+const menu = document.querySelector(".menu");
+const overlay = document.querySelector(".menu-overlay");
 
-const menuButton =
-document.querySelector(".menu-button");
+// Open menu
+function openMenu() {
+    menu.classList.add("active");
+    overlay.classList.add("active");
+}
 
-const menu =
-document.querySelector(".menu");
+// Close menu
+function closeMenu() {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+}
 
-const overlay =
-document.querySelector(".menu-overlay");
-
-
+// Keep click functionality
 menuButton.onclick = () => {
-
-menu.classList.toggle("active");
-
-overlay.classList.toggle("active");
-
+    if (menu.classList.contains("active")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
 };
 
+// Open on hover (desktop)
+menuButton.addEventListener("mouseenter", openMenu);
+menu.addEventListener("mouseenter", openMenu);
 
-overlay.onclick = () => {
+// Close when mouse leaves the menu
+menu.addEventListener("mouseleave", closeMenu);
 
-menu.classList.remove("active");
-
-overlay.classList.remove("active");
-
-};
-
+// Close when clicking the overlay
+overlay.onclick = closeMenu;
 </script>
-
 
 <!-- CHOOSE BOOK DROPDOWN -->
 
