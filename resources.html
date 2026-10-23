@@ -208,79 +208,43 @@ Resources
         </a>
   
 </section>
- 
 
 <script>
+const menuButton = document.querySelector(".menu-button");
+const menu = document.querySelector(".menu");
+const overlay = document.querySelector(".menu-overlay");
 
-
-const menuButton =
-document.querySelector(".menu-button");
-
-
-const menu =
-document.querySelector(".menu");
-
-
-const overlay =
-document.querySelector(".menu-overlay");
-
-
-
-menuButton.onclick = () => {
-
-menu.classList.toggle("active");
-
-overlay.classList.toggle("active");
-
-};
-
-
-
-overlay.onclick = () => {
-
-menu.classList.remove("active");
-
-overlay.classList.remove("active");
-
-};
-
-
-
-
-
-const aboutSection =
-document.querySelector(".about");
-
-
-const observer =
-new IntersectionObserver((entries)=>{
-
-
-entries.forEach(entry=>{
-
-
-if(entry.isIntersecting){
-
-aboutSection.classList.add("show");
-
+// Open menu
+function openMenu() {
+    menu.classList.add("active");
+    overlay.classList.add("active");
 }
 
+// Close menu
+function closeMenu() {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+}
 
-});
+// Keep click functionality
+menuButton.onclick = () => {
+    if (menu.classList.contains("active")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+};
 
+// Open on hover (desktop)
+menuButton.addEventListener("mouseenter", openMenu);
+menu.addEventListener("mouseenter", openMenu);
 
-},{
-threshold:.3
-});
+// Close when mouse leaves the menu
+menu.addEventListener("mouseleave", closeMenu);
 
-
-
-observer.observe(aboutSection);
-
-
-
+// Close when clicking the overlay
+overlay.onclick = closeMenu;
 </script>
-
 
 </body>
 
