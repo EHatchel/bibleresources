@@ -339,6 +339,7 @@ goButton.addEventListener("click", function () {
 </script>
  
 <script>
+
 function centerSelectedChapter() {
     const hash = window.location.hash;
 
@@ -352,7 +353,7 @@ function centerSelectedChapter() {
         return;
     }
 
-    // Calculate the position needed to center the chapter.
+    // Center the selected chapter on the screen.
     const targetPosition =
         target.getBoundingClientRect().top +
         window.scrollY -
@@ -370,6 +371,16 @@ function centerSelectedChapter() {
         ),
         behavior: "smooth"
     });
+
+    // Restart the highlight animation.
+    target.classList.remove("chapter-highlight");
+    void target.offsetWidth;
+    target.classList.add("chapter-highlight");
+
+    // Remove the class after the animation finishes.
+    setTimeout(() => {
+        target.classList.remove("chapter-highlight");
+    }, 2500);
 }
 
 // Wait for the page to load before scrolling.
