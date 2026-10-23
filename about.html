@@ -83,40 +83,44 @@ Today, our group is built on the conviction of "Eternity Over Feelings." We beli
 
 </section>
 
+
 <script>
+const menuButton = document.querySelector(".menu-button");
+const menu = document.querySelector(".menu");
+const overlay = document.querySelector(".menu-overlay");
 
-const menuButton =
-document.querySelector(".menu-button");
+// Open menu
+function openMenu() {
+    menu.classList.add("active");
+    overlay.classList.add("active");
+}
 
-
-const menu =
-document.querySelector(".menu");
-
-
-const overlay =
-document.querySelector(".menu-overlay");
-
-
-
-menuButton.onclick = () => {
-
-    menu.classList.toggle("active");
-
-    overlay.classList.toggle("active");
-
-};
-
-
-
-overlay.onclick = () => {
-
+// Close menu
+function closeMenu() {
     menu.classList.remove("active");
-
     overlay.classList.remove("active");
+}
 
+// Keep click functionality
+menuButton.onclick = () => {
+    if (menu.classList.contains("active")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
 };
 
+// Open on hover (desktop)
+menuButton.addEventListener("mouseenter", openMenu);
+menu.addEventListener("mouseenter", openMenu);
+
+// Close when mouse leaves the menu
+menu.addEventListener("mouseleave", closeMenu);
+
+// Close when clicking the overlay
+overlay.onclick = closeMenu;
 </script>
+
 
 <script>
 
