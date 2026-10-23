@@ -87,6 +87,7 @@ Jonah
     <option value="ephesians">Ephesians</option>
     <option value="colossians">Colossians</option>
     <option value="1_timothy">1 Timothy</option>
+    <option value="2_timothy">2 Timothy</option>
     <option value="philemon">Philemon</option>
 </select>
 
@@ -218,6 +219,7 @@ const chapters = {
     "ephesians": 6,
     "colossians": 4,
     "1_timothy": 6,
+    "2_timothy": 4,
     "philemon": 1
 };
 
@@ -298,7 +300,59 @@ goButton.addEventListener("click", function () {
 });
 
 </script> 
+<script>
 
+function centerSelectedChapter() {
+    const hash = window.location.hash;
+
+    if (!hash || !hash.startsWith("#chapter-")) {
+        return;
+    }
+
+    const target = document.querySelector(hash);
+
+    if (!target) {
+        return;
+    }
+
+    // Center the selected chapter on the screen.
+    const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        (window.innerHeight / 2) +
+        (target.offsetHeight / 2);
+
+    window.scrollTo({
+        top: Math.max(
+            0,
+            Math.min(
+                targetPosition,
+                document.documentElement.scrollHeight -
+                    window.innerHeight
+            )
+        ),
+        behavior: "smooth"
+    });
+
+    // Restart the highlight animation.
+    target.classList.remove("chapter-highlight");
+    void target.offsetWidth;
+    target.classList.add("chapter-highlight");
+
+    // Remove the class after the animation finishes.
+    setTimeout(() => {
+        target.classList.remove("chapter-highlight");
+    }, 2500);
+}
+
+// Wait for the page to load before scrolling.
+window.addEventListener("load", function () {
+    requestAnimationFrame(function () {
+        requestAnimationFrame(centerSelectedChapter);
+    });
+});
+</script>
+ 
 </body>
 
 </html>
