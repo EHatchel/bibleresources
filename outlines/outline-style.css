@@ -160,11 +160,30 @@
 
     margin-bottom:50px;
 }
-/* =========================
-   Glow Around Chapters
-========================= */
+
+/* Highlight the chapter selected from the dropdown */
 .chapter-highlight {
-    animation: chapterGlow 3s ease-out;
+    animation: chapterGlow 2.5s ease-out;
+    border-radius: 8px;
+}
+
+@keyframes chapterGlow {
+    0% {
+        background-color: #f5dfa0;
+        box-shadow: 0 0 0 4px #d4a94f;
+    }
+
+    50% {
+        background-color: #fff1c9;
+        box-shadow: 0 0 18px 5px rgba(212, 169, 79, 0.45);
+    }
+
+    100% {
+        background-color: transparent;
+        box-shadow: 0 0 0 0 transparent;
+    }
+}
+
 
 /* =========================
    ANIMATIONS
