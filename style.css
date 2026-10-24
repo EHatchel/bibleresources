@@ -112,7 +112,7 @@ h3 {
     position:relative;
     overflow:hidden;
     background-image:url("images/EOF BANNER.png");
-    background-size:cover;
+    background-size:100% auto;
     background-position:center;
     border-bottom: 5px solid #28282B;
 }
