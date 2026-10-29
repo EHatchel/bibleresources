@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Jonah</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../style.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- MENU -->
+
+<div class="menu-button">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<div class="menu-overlay"></div>
+
+
+<nav class="menu">
+
+<a href="../index.html">Home</a>
+ 
+<a href="../outlines.html">Outlines</a>
+
+<a href="../curriculums.html">Curriculums</a>
+
+<a href="../resources.html">Resources</a>
+
+<a href="../about.html">About</a>
+ 
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+Jonah
+</h1>
+
+</section>
+
+<!-- OUTLINE LIST -->
+
+<section>
+
+<div class="study-selector">
+
+  <h3>
+   What are we studying today?
+  </h3>
+
+</div>
+
+<div class="study-selector">
+
+<select id="bookSelect">
+    <option value="">Select a book</option>
+    <option value="jonah">Jonah</option>
+    <option value="Matthew">Matthew</option>
+    <option value="ephesians">Ephesians</option>
+    <option value="colossians">Colossians</option>
+    <option value="1_timothy">1 Timothy</option>
+    <option value="2_timothy">2 Timothy</option>
+    <option value="philemon">Philemon</option>
+</select>
+
+
+<select id="chapterSelect" disabled>
+    <option value="">Select a chapter</option>
+</select>
+
+<button id="goButton" disabled>Go</button>
+
+</div>
+
+</section>
+ 
+<!-- MESSAGES -->
+
+<section class="outline">
+
+    <div class="message-grid">
+
+        <!-- PART 1 -->
+        <div class="message-section" id="chapter-1">
+            <h3>Jonah 1</h3>
+
+            <a href="messages/jonah_overview.html">
+                <span class="passage">Overview</span>
+                <span class="title">Jonah Overview</span>
+            </a>
+
+            <a href="messages/jonah-1-1-6.html">
+                <span class="passage">Jonah 1:1–6</span>
+                <span class="title">Called to Go, Chose to Run</span>
+            </a>
+         
+            <a href="messages/jonah-1-7-17.html">
+                <span class="passage">Jonah 1:7–17</span>
+                <span class="title">Walk the Plank</span>
+            </a>
+         
+        </div>
+     
+     
+  <!-- PART 2 -->
+        <div class="message-section" id="chapter-2">
+            <h3>Jonah 2</h3>
+
+            <a href="messages/jonah-2-1-10.html">
+                <span class="passage">Jonah 2:1-10</span>
+                <span class="title">The Appointed Repentance Place</span>
+            </a>
+
+        </div>
+
+     
+<!-- PART 3 -->
+        <div class="message-section" id="chapter-3">
+            <h3>Jonah 3</h3>
+
+            <a href="messages/jonah-3.html">
+                <span class="passage">Jonah 3:1-10</span>
+                <span class="title">A God of Second Chances</span>
+            </a>
+        </div>
+
+     <!-- PART 4 -->
+        <div class="message-section" id="chapter-4">
+            <h3>Jonah 4</h3>
+
+            <a href="messages/jonah-4.html">
+                <span class="passage">Jonah 4:1-11</span>
+                <span class="title">A Perplexed Prophet and a Patient God</span>
+            </a>
+
+        </div>
+     
+    </div>
+
+    <!-- TOP LEFT MENU -->
+     
+<script>
+const menuButton = document.querySelector(".menu-button");
+const menu = document.querySelector(".menu");
+const overlay = document.querySelector(".menu-overlay");
+
+// Open menu
+function openMenu() {
+    menu.classList.add("active");
+    overlay.classList.add("active");
+}
+
+// Close menu
+function closeMenu() {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+// Keep click functionality
+menuButton.onclick = () => {
+    if (menu.classList.contains("active")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+};
+
+// Open on hover (desktop)
+menuButton.addEventListener("mouseenter", openMenu);
+menu.addEventListener("mouseenter", openMenu);
+
+// Close when mouse leaves the menu
+menu.addEventListener("mouseleave", closeMenu);
+
+// Close when clicking the overlay
+overlay.onclick = closeMenu;
+</script>
+
+<!-- CHOOSE BOOK DROPDOWN -->
+
+<script>
+
+const bookSelect = document.getElementById("bookSelect");
+const chapterSelect = document.getElementById("chapterSelect");
+const goButton = document.getElementById("goButton");
+
+
+const chapters = {
+    "jonah": 4,
+    "Matthew": 28,
+    "ephesians": 6,
+    "colossians": 4,
+    "1_timothy": 6,
+    "2_timothy": 4,
+    "philemon": 1
+};
+
+
+// When a book is selected
+
+bookSelect.addEventListener("change", function () {
+
+    const book = this.value;
+
+    // Reset chapters
+
+    chapterSelect.innerHTML =
+        '<option value="">Select a chapter</option>';
+
+
+    if (book && chapters[book]) {
+
+        // Add the chapters for the selected book
+
+        for (let i = 1; i <= chapters[book]; i++) {
+
+            const option = document.createElement("option");
+
+            option.value = i;
+            option.textContent = `Chapter ${i}`;
+
+            chapterSelect.appendChild(option);
+
+        }
+
+        chapterSelect.disabled = false;
+
+        // Enable Go as soon as a book is selected
+
+        goButton.disabled = false;
+
+    } else {
+
+        chapterSelect.disabled = true;
+
+        goButton.disabled = true;
+
+    }
+
+});
+
+
+// Go button
+
+goButton.addEventListener("click", function () {
+
+    const book = bookSelect.value;
+    const chapter = chapterSelect.value;
+
+
+    // If both book AND chapter are selected,
+    // go directly to that chapter.
+
+    if (book && chapter) {
+
+        window.location.href =
+            `${book}.html#chapter-${chapter}`;
+
+    }
+
+
+    // If only a book is selected,
+    // go to the beginning of that book's outline.
+
+    else if (book) {
+
+        window.location.href =
+            `${book}.html`;
+
+    }
+
+});
+
+</script> 
+<script>
+
+function centerSelectedChapter() {
+    const hash = window.location.hash;
+
+    if (!hash || !hash.startsWith("#chapter-")) {
+        return;
+    }
+
+    const target = document.querySelector(hash);
+
+    if (!target) {
+        return;
+    }
+
+    // Center the selected chapter on the screen.
+    const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        (window.innerHeight / 2) +
+        (target.offsetHeight / 2);
+
+    window.scrollTo({
+        top: Math.max(
+            0,
+            Math.min(
+                targetPosition,
+                document.documentElement.scrollHeight -
+                    window.innerHeight
+            )
+        ),
+        behavior: "smooth"
+    });
+
+    // Restart the highlight animation.
+    target.classList.remove("chapter-highlight");
+    void target.offsetWidth;
+    target.classList.add("chapter-highlight");
+
+    // Remove the class after the animation finishes.
+    setTimeout(() => {
+        target.classList.remove("chapter-highlight");
+    }, 2500);
+}
+
+// Wait for the page to load before scrolling.
+window.addEventListener("load", function () {
+    requestAnimationFrame(function () {
+        requestAnimationFrame(centerSelectedChapter);
+    });
+});
+</script>
+ 
+</body>
+
+</html>
