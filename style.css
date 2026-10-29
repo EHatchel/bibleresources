@@ -247,17 +247,16 @@ h3 {
 
 }
 
+
 .explore-grid {
 
-    max-width:1200px;
-
-    margin:auto;
+    max-width:1000px;
+    margin:0 auto;
 
     display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:30px;
+    gap:24px;
 
 }
 
@@ -266,14 +265,14 @@ h3 {
     background:#222;
 
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:18px;
 
-    padding:40px 30px;
-
-    transition:.3s ease;
+    padding:35px 28px;
+    min-width:0;
+    box-sizing:border-box;
 
     text-decoration:none;
+    transition:.3s ease;
 
 }
 
@@ -282,24 +281,41 @@ h3 {
     transform:translateY(-8px);
 
     background:#292929;
-
     border-color:rgba(255,255,255,.18);
 
 }
 
-.explore-card h3 {
+/* MOBILE EXPLORE */
 
-    font-size:2rem;
+@media (max-width:600px) {
 
-    margin-bottom:18px;
+    .explore {
+        padding:55px 16px;
+    }
 
-}
+    .explore h2 {
+        margin-bottom:30px;
+    }
 
-.explore-card p {
+    .explore-grid {
+        gap:14px;
+    }
 
-    color:#bdbdbd;
+    .explore-card {
+        padding:24px 12px;
+        border-radius:14px;
+    }
 
-    line-height:1.7;
+    .explore-card h3 {
+        font-size:1.25rem;
+        margin-bottom:12px;
+    }
+
+    .explore-card p {
+        font-size:0.9rem;
+        line-height:1.5;
+        margin:0;
+    }
 
 }
 
