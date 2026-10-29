@@ -898,9 +898,6 @@ a:hover {
     padding: 70px 20px;
     background: #111;
     color: #fff;
-    transform: translateY(25px);
-    transition: opacity 0.8s ease,
-                transform 0.8s ease;
 }
 
 .latest-message-container {
