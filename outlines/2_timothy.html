@@ -65,16 +65,82 @@
 
 <div class="study-selector">
 
+
 <select id="bookSelect">
     <option value="">Select a book</option>
+
+    <!-- Old Testament -->
+    <option value="genesis">Genesis</option>
+    <option value="exodus">Exodus</option>
+    <option value="leviticus">Leviticus</option>
+    <option value="numbers">Numbers</option>
+    <option value="deuteronomy">Deuteronomy</option>
+    <option value="joshua">Joshua</option>
+    <option value="judges">Judges</option>
+    <option value="ruth">Ruth</option>
+    <option value="1_samuel">1 Samuel</option>
+    <option value="2_samuel">2 Samuel</option>
+    <option value="1_kings">1 Kings</option>
+    <option value="2_kings">2 Kings</option>
+    <option value="1_chronicles">1 Chronicles</option>
+    <option value="2_chronicles">2 Chronicles</option>
+    <option value="ezra">Ezra</option>
+    <option value="nehemiah">Nehemiah</option>
+    <option value="esther">Esther</option>
+    <option value="job">Job</option>
+    <option value="psalms">Psalms</option>
+    <option value="proverbs">Proverbs</option>
+    <option value="ecclesiastes">Ecclesiastes</option>
+    <option value="song_of_solomon">Song of Solomon</option>
+    <option value="isaiah">Isaiah</option>
+    <option value="jeremiah">Jeremiah</option>
+    <option value="lamentations">Lamentations</option>
+    <option value="ezekiel">Ezekiel</option>
+    <option value="daniel">Daniel</option>
+    <option value="hosea">Hosea</option>
+    <option value="joel">Joel</option>
+    <option value="amos">Amos</option>
+    <option value="obadiah">Obadiah</option>
     <option value="jonah">Jonah</option>
+    <option value="micah">Micah</option>
+    <option value="nahum">Nahum</option>
+    <option value="habakkuk">Habakkuk</option>
+    <option value="zephaniah">Zephaniah</option>
+    <option value="haggai">Haggai</option>
+    <option value="zechariah">Zechariah</option>
+    <option value="malachi">Malachi</option>
+
+    <!-- New Testament -->
     <option value="Matthew">Matthew</option>
+    <option value="mark">Mark</option>
+    <option value="luke">Luke</option>
+    <option value="john">John</option>
+    <option value="acts">Acts</option>
+    <option value="romans">Romans</option>
+    <option value="1_corinthians">1 Corinthians</option>
+    <option value="2_corinthians">2 Corinthians</option>
+    <option value="galatians">Galatians</option>
     <option value="ephesians">Ephesians</option>
+    <option value="philippians">Philippians</option>
     <option value="colossians">Colossians</option>
+    <option value="1_thessalonians">1 Thessalonians</option>
+    <option value="2_thessalonians">2 Thessalonians</option>
     <option value="1_timothy">1 Timothy</option>
     <option value="2_timothy">2 Timothy</option>
+    <option value="titus">Titus</option>
     <option value="philemon">Philemon</option>
+    <option value="hebrews">Hebrews</option>
+    <option value="james">James</option>
+    <option value="1_peter">1 Peter</option>
+    <option value="2_peter">2 Peter</option>
+    <option value="1_john">1 John</option>
+    <option value="2_john">2 John</option>
+    <option value="3_john">3 John</option>
+    <option value="jude">Jude</option>
+    <option value="revelation">Revelation</option>
 </select>
+
+
 
 
 <select id="chapterSelect" disabled>
@@ -155,14 +221,77 @@ const goButton = document.getElementById("goButton");
 
 
 const chapters = {
+    // Old Testament
+    "genesis": 50,
+    "exodus": 40,
+    "leviticus": 27,
+    "numbers": 36,
+    "deuteronomy": 34,
+    "joshua": 24,
+    "judges": 21,
+    "ruth": 4,
+    "1_samuel": 31,
+    "2_samuel": 24,
+    "1_kings": 22,
+    "2_kings": 25,
+    "1_chronicles": 29,
+    "2_chronicles": 36,
+    "ezra": 10,
+    "nehemiah": 13,
+    "esther": 10,
+    "job": 42,
+    "psalms": 150,
+    "proverbs": 31,
+    "ecclesiastes": 12,
+    "song_of_solomon": 8,
+    "isaiah": 66,
+    "jeremiah": 52,
+    "lamentations": 5,
+    "ezekiel": 48,
+    "daniel": 12,
+    "hosea": 14,
+    "joel": 3,
+    "amos": 9,
+    "obadiah": 1,
     "jonah": 4,
+    "micah": 7,
+    "nahum": 3,
+    "habakkuk": 3,
+    "zephaniah": 3,
+    "haggai": 2,
+    "zechariah": 14,
+    "malachi": 4,
+
+    // New Testament
     "Matthew": 28,
+    "mark": 16,
+    "luke": 24,
+    "john": 21,
+    "acts": 28,
+    "romans": 16,
+    "1_corinthians": 16,
+    "2_corinthians": 13,
+    "galatians": 6,
     "ephesians": 6,
+    "philippians": 4,
     "colossians": 4,
+    "1_thessalonians": 5,
+    "2_thessalonians": 3,
     "1_timothy": 6,
     "2_timothy": 4,
-    "philemon": 1
+    "titus": 3,
+    "philemon": 1,
+    "hebrews": 13,
+    "james": 5,
+    "1_peter": 5,
+    "2_peter": 3,
+    "1_john": 5,
+    "2_john": 1,
+    "3_john": 1,
+    "jude": 1,
+    "revelation": 22
 };
+
 
 
 // When a book is selected
