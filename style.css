@@ -896,6 +896,7 @@ a:hover {
     padding: 70px 20px;
     background: #111;
     color: #fff;
+    animation:textFade 2s ease forwards;
 }
 
 .latest-message-container {
