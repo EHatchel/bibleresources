@@ -103,17 +103,14 @@ h3 {
 
 .hero {
 
-    min-height:60vh;
+    max-height:45vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:120px 20px;
     position:relative;
     overflow:hidden;
-
-    background-size:cover;
-    background-position:center;
+    background-image:url("images/EOF BANNER.png");
     border-bottom: 5px solid #28282B;
 }
 
