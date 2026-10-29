@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Book Coming Soon!</title>
+    <title>Genesis | Eternity Over Feelings</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -19,64 +19,23 @@
 
 <body class="coming-soon-body">
 
-    <!-- Hamburger menu -->
-    <button class="menu-button" id="menuButton" aria-label="Open menu">
-        ☰
-    </button>
-
-    <nav class="menu" id="menu">
-        <a href="./index.html">Home</a>
-        <a href="./outlines.html">Outlines</a>
-        <a href="./curriculums.html">Curriculums</a>
-        <a href="./resources.html">Resources</a>
-        <a href="./about.html">About</a>
-    </nav>
-
-    <div class="menu-overlay" id="menuOverlay"></div>
-
     <main class="coming-soon">
 
-        <h1 id="bookTitle">Book Coming Soon</h1>
+        <h1>Genesis</h1>
 
         <p>
-            Sorry, this book is currently <u>not</u> on the site.☹️
+            Sorry, this book is currently not in the site.☹️
         </p>
 
         <p>
             Please see the suggestions page if you think this is an error.
         </p>
 
-        <a href="./outlines.html" class="return-button">
+        <a href="outlines.html" class="return-button">
             Return to Outlines
         </a>
 
     </main>
-
-    <script>
-        // Get the book name from the URL
-        const params = new URLSearchParams(window.location.search);
-        const book = params.get("book");
-
-        if (book) {
-            document.getElementById("bookTitle").textContent = book;
-            document.title = book + " | Eternity Over Feelings";
-        }
-
-        // Hamburger menu
-        const menuButton = document.getElementById("menuButton");
-        const menu = document.getElementById("menu");
-        const menuOverlay = document.getElementById("menuOverlay");
-
-        menuButton.addEventListener("click", () => {
-            menu.classList.toggle("active");
-            menuOverlay.classList.toggle("active");
-        });
-
-        menuOverlay.addEventListener("click", () => {
-            menu.classList.remove("active");
-            menuOverlay.classList.remove("active");
-        });
-    </script>
 
 </body>
 </html>
