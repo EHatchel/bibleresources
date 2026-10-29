@@ -902,7 +902,6 @@ a:hover {
     transition: opacity 0.8s ease,
                 transform 0.8s ease;
 }
-}
 
 .latest-message-container {
     max-width: 1000px;
