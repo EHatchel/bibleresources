@@ -912,3 +912,117 @@ a:hover {
     text-decoration:underline;
 
 }
+
+/* ==============================
+   LATEST MESSAGE SECTION
+============================== */
+
+.latest-message-section {
+    padding: 70px 20px;
+    background: #111;
+    color: #fff;
+}
+
+.latest-message-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.latest-message-label {
+    margin: 0 0 20px;
+    color: #b8a47a;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.latest-message-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-left: 4px solid #b8a47a;
+    border-radius: 8px;
+    padding: 38px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.latest-message-card:hover {
+    border-color: #b8a47a;
+    transform: translateY(-3px);
+}
+
+.latest-message-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.latest-message-date {
+    margin: 0 0 12px;
+    color: #b8a47a;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+}
+
+.latest-message-content h2 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.25;
+}
+
+.latest-message-scripture {
+    margin: 0 0 20px;
+    color: #c5b58f;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.latest-message-description {
+    margin: 0 0 26px;
+    color: #d0d0d0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.latest-message-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border: 1px solid #b8a47a;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease,
+                color 0.2s ease;
+}
+
+.latest-message-button:hover {
+    background: #b8a47a;
+    color: #111;
+}
+
+@media (max-width: 600px) {
+    .latest-message-section {
+        padding: 45px 16px;
+    }
+
+    .latest-message-card {
+        padding: 25px 20px;
+    }
+
+    .latest-message-description {
+        font-size: 1rem;
+    }
+
+    .latest-message-button {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+
