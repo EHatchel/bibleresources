@@ -103,7 +103,7 @@ h3 {
 
 .hero {
 
-    max-height:45vh;
+    max-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
