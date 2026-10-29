@@ -441,6 +441,32 @@ h3 {
 }
 
 /* =========================
+   ABOUT PAGE - MOBILE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    .about-page {
+        padding: 60px 15px;
+    }
+
+    .about-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-content img {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 20px auto;
+        object-fit: contain;
+    }
+
+}
+
+/* =========================
    OUTLINE PAGE
 ========================= */
 
