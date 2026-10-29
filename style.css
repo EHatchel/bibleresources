@@ -134,9 +134,7 @@ h3 {
     font-size:clamp(2.5rem,6vw,5rem);
     font-weight:600;
     letter-spacing:1px;
-    opacity:0;
-    animation-delay:0s;
-
+    
 }
 
 /* =========================
