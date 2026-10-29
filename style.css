@@ -242,11 +242,18 @@ h3 {
 .explore h2 {
 
     font-size:clamp(2rem,5vw,3.5rem);
-
     margin-bottom:50px;
 
 }
 
+.explore h3 {
+
+    font-size: 2rem;
+    margin-bottom:50px;
+    color: #c5b58f;
+    font-weight: 600;
+
+}
 
 .explore-grid {
 
