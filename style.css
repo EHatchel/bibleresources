@@ -113,7 +113,7 @@ h3 {
     overflow:hidden;
     background-image:url("images/EOF Banner Remake 1.png");
     border-bottom: 5px solid #28282B;
-    background-size:cover;
+    background-size:contain;
     background-position:center;
     background-repeat:no-repeat;
 }
