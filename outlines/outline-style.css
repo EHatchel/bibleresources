@@ -314,3 +314,46 @@ a:hover {
     text-decoration:underline;
 
 }
+
+/* =========================
+   TOP NAVIGATION BAR
+========================= */
+
+.top-navbar {
+
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    padding:0 25px;
+    background:#111111;
+    border-bottom:1px solid #28282B;
+    position:relative;
+    z-index:30;
+
+}
+
+/* LEFT SIDE */
+
+.navbar-left {
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* LOGO */
+
+.navbar-logo {
+
+    display:flex;
+    align-items:center;
+}
+
+.navbar-logo img {
+
+    height:45px;
+    width:auto;
+    object-fit:contain;
+
+}
