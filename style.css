@@ -102,9 +102,9 @@ h3 {
 ========================= */
 
 .hero {
-
+    max-height: 120vh;
     display:flex;
-   
+    padding:100px 20px;
     justify-content:center;
     align-items:center;
     text-align:center;
