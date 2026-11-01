@@ -45,13 +45,9 @@
 <nav class="menu">
 
 <a href="index.html">Home</a>
- 
 <a href="outlines.html">Outlines</a>
-
 <a href="curriculums.html">Curriculums</a>
-
 <a href="resources.html">Resources</a>
-
 <a href="about.html">About</a>
  
 </nav>
@@ -59,25 +55,23 @@
   
 <section class="about-page">
 
-
-<div class="background one"></div>
-
-<div class="background two"></div>
-
-<div class="background three"></div>
-
-
-<div class="about-content">
-
 <h1>
 About Us
 </h1>
 
+<div class="about-slideshow">
+    <img src="images/group_1.jpeg" class="active">
+    <img src="images/group_2.jpg">
+    <img src="images/group_3.jpeg">
+</div>    
 
 <p>
-Our group began four years ago with just two people and a small step of faith. Although we didn't feel fully prepared, we trusted the Lord's leading and committed to faithfully teaching His Word. Through that journey, we learned that God's purposes are greater than our own and that He is faithful to work through willing servants.
+Our group began four years ago with just two people and a small step of faith. Although we didn't feel fully prepared, we trusted the Lord's leading and committed to faithfully teaching His Word. 
 </p>
 
+<p>
+Through that journey, we learned that God's purposes are greater than our own and that He is faithful to work through willing servants.
+</p>    
 
 <p>
 Today, our group is built on the conviction of "Eternity Over Feelings." We believe genuine love is willing to speak the truth because it values a person's eternal relationship with Christ above temporary comfort.
@@ -156,7 +150,25 @@ observer.observe(aboutContent);
 
 
 </script>
- 
+
+// Slideshow
+<script>
+const slides = document.querySelectorAll(".about-slideshow img");
+
+let currentSlide = 0;
+
+setInterval(() => {
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+
+}, 6000);
+    
+</script>
+    
 </body>
 
 </html>
