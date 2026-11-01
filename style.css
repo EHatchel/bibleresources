@@ -141,6 +141,49 @@ h3 {
 }
 
 /* =========================
+   ABOUT
+========================= */
+
+.about {
+
+    position:relative;
+    overflow:hidden;
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 20px;
+    animation:textFade 2s ease forwards;
+
+}
+
+.about::before {
+
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.70);
+    z-index:1;
+
+}
+
+.background {
+
+    position:absolute;
+    height:110%;
+    width:110%;
+    top:-5%;
+    left:-5%;
+    background-size:cover;
+    background-position:center;
+    z-index:0;
+    opacity:0;
+
+}
+
+/* =========================
    ABOUT SLIDESHOW
 ========================= */
 
