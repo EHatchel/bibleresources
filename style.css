@@ -102,19 +102,19 @@ h3 {
 ========================= */
 
 .hero {
-    max-height: 150vh;
+    width:100%;
+    aspect-ratio: 1500 / 400;
     display:flex;
-    padding:100px 20px;
     justify-content:center;
     align-items:center;
     text-align:center;
     position:relative;
     overflow:hidden;
     background-image:url("images/EOF FINAL BANNER.png");
-    border-bottom: 5px solid #28282B;
-    background-size:cover;
+    background-size:100% 100%;
     background-position:center;
     background-repeat:no-repeat;
+    border-bottom:5px solid #28282B;
 }
 
 .hero::before {
