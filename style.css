@@ -141,91 +141,61 @@ h3 {
 }
 
 /* =========================
-   ABOUT
+   ABOUT SLIDESHOW
 ========================= */
 
-.about {
+.about-slideshow {
 
     position:relative;
+
+    width:100%;
+    max-width:900px;
+
+    height:500px;
+
+    margin:40px auto;
+
     overflow:hidden;
-    min-height:90vh;
+
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:80px 20px;
-    animation:textFade 2s ease forwards;
 
 }
 
-.about::before {
-
-    content:"";
+.about-slideshow img {
 
     position:absolute;
 
-    inset:0;
+    max-width:100%;
+    max-height:100%;
 
-    background:rgba(0,0,0,.70);
+    width:auto;
+    height:auto;
 
-    z-index:1;
-
-}
-
-.background {
-
-    position:absolute;
-
-    height:110%;
-
-    width:110%;
-
-    top:-5%;
-
-    left:-5%;
-
-    background-size:cover;
-
-    background-position:center;
-
-    filter:grayscale(100%);
-
-    z-index:0;
+    object-fit:contain;
 
     opacity:0;
 
+    transition:opacity 2s ease-in-out;
+
 }
 
-.background.one {
-
-    background-image:url("images/group_1.jpeg");
+.about-slideshow img.active {
 
     opacity:1;
 
-    animation:
-        crossfadeOne 30s infinite,
-        slowZoom 30s infinite;
-
 }
 
-.background.two {
+/* MOBILE */
 
-    background-image:url("images/group_2.jpg");
+@media (max-width:768px) {
 
-    animation:
-        crossfadeTwo 30s infinite,
-        slowZoom 30s infinite;
+    .about-slideshow {
 
-}
+        height:300px;
 
-.background.three {
-
-    background-image:url("images/group_3.jpeg");
-
-    animation:
-        crossfadeThree 30s infinite,
-        slowZoom 30s infinite;
+    }
 
 }
 
