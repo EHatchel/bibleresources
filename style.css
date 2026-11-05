@@ -637,6 +637,7 @@ h3 {
 
 }
 
+
 /* =========================
    RESOURCES PAGE
 ========================= */
@@ -656,7 +657,7 @@ h3 {
 }
 
 .resource-category + .resource-category {
-    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    border-top: 1px solid rgba(213, 197, 165, 0.25);
     padding-top: 55px;
 }
 
@@ -666,13 +667,12 @@ h3 {
     max-width: 750px;
     margin: 0 auto 40px;
     text-align: center;
-   
 }
 
 .resource-category-header h2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: #d5c5a5;
+    color: #D5C5A5;
     margin-bottom: 12px;
 }
 
@@ -689,6 +689,7 @@ h3 {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px 30px;
@@ -700,12 +701,12 @@ h3 {
     display: block;
     min-width: 0;
     text-decoration: none;
-    color: #d5c5a5;
+    color: #D5C5A5;
 }
 
-/* Center a category containing only one card */
+/* Center the final card when the total is odd */
 
-.resource-card:only-child {
+.resource-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
     width: calc((100% - 30px) / 2);
@@ -728,7 +729,10 @@ h3 {
     display: block;
     object-fit: contain;
     pointer-events: none;
-    transition: transform 0.35s ease, filter 0.35s ease;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
 /* Desktop Hover Overlay */
@@ -736,23 +740,30 @@ h3 {
 .resource-overlay {
     position: absolute;
     inset: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     padding: 25px;
+
     background: rgba(0, 0, 0, 0.88);
+
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .resource-overlay h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #d5c5a5;
+    color: #D5C5A5;
 }
 
 .resource-overlay p {
@@ -810,7 +821,9 @@ h3 {
         gap: 28px 18px;
     }
 
-    .resource-card:only-child {
+    /* Keep the final odd card centered on mobile */
+
+    .resource-card:last-child:nth-child(odd) {
         width: calc((100% - 18px) / 2);
     }
 
@@ -828,7 +841,7 @@ h3 {
         font-family: 'Playfair Display', serif;
         font-size: clamp(0.85rem, 2.5vw, 1.1rem);
         line-height: 1.4;
-        color: #d5c5a5;
+        color: #D5C5A5;
         margin: 12px 0 0;
     }
 }
