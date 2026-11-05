@@ -637,40 +637,82 @@ h3 {
 
 }
 
+
 /* =========================
-   RESOURCES SECTION
+   RESOURCES PAGE
 ========================= */
 
 .resources-section {
     background: #f6f1e7;
     width: 100%;
-    padding: 80px 6%;
-    box-sizing: border-box;
+    padding: 70px 6%;
 }
 
-.resources-section h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #2b2b2b;
+/* Individual Categories */
+
+.resource-category {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 20px 0 65px;
 }
+
+.resource-category + .resource-category {
+    border-top: 1px solid rgba(43, 43, 43, 0.15);
+    padding-top: 55px;
+}
+
+/* Category Heading */
+
+.resource-category-header {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.resource-category-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #2b2b2b;
+    margin-bottom: 12px;
+}
+
+.resource-category-header p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* Resource Grid */
 
 .resources-grid {
     width: 100%;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
 }
 
+/* Individual Resource Cards */
+
 .resource-card {
+    display: block;
+    min-width: 0;
     text-decoration: none;
     color: #2b2b2b;
-    display: block;
 }
+
+/* Center a category containing only one card */
+
+.resource-card:only-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 30px) / 2);
+}
+
+/* Resource Images */
 
 .resource-image {
     position: relative;
@@ -678,6 +720,7 @@ h3 {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 12px;
+    background: #e9e2d5;
 }
 
 .resource-image img {
@@ -686,13 +729,12 @@ h3 {
     display: block;
     object-fit: contain;
     pointer-events: none;
-
     transition:
         transform 0.35s ease,
         filter 0.35s ease;
 }
 
-/* Desktop hover overlay */
+/* Desktop Hover Overlay */
 
 .resource-overlay {
     position: absolute;
@@ -706,7 +748,7 @@ h3 {
     text-align: center;
     padding: 25px;
 
-    background: rgba(43, 43, 43, 0.82);
+    background: rgba(43, 43, 43, 0.85);
 
     opacity: 0;
     transform: translateY(10px);
@@ -714,14 +756,12 @@ h3 {
     transition:
         opacity 0.3s ease,
         transform 0.3s ease;
-
-    box-sizing: border-box;
 }
 
 .resource-overlay h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
     color: #f6f1e7;
 }
 
@@ -729,12 +769,10 @@ h3 {
     font-family: 'Source Sans 3', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    margin: 0;
     color: #f6f1e7;
 }
 
-
-/* Hover animation */
+/* Hover Effects */
 
 .resource-card:hover .resource-image img {
     transform: scale(1.06);
@@ -745,11 +783,64 @@ h3 {
     transform: translateY(0);
 }
 
-
-/* Mobile resource name */
+/* Mobile Resource Names */
 
 .mobile-resource-name {
     display: none;
+}
+
+/* =========================
+   MOBILE RESOURCES
+========================= */
+
+@media (max-width: 700px) {
+
+    .resources-section {
+        padding: 45px 18px;
+    }
+
+    .resource-category {
+        padding: 15px 0 45px;
+    }
+
+    .resource-category + .resource-category {
+        padding-top: 40px;
+    }
+
+    .resource-category-header {
+        margin-bottom: 30px;
+    }
+
+    .resource-category-header p {
+        font-size: 0.95rem;
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 18px;
+    }
+
+    .resource-card:only-child {
+        width: calc((100% - 18px) / 2);
+    }
+
+    .resource-overlay {
+        display: none;
+    }
+
+    .resource-card:hover .resource-image img {
+        transform: none;
+    }
+
+    .mobile-resource-name {
+        display: block;
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+        line-height: 1.4;
+        color: #425A4E;
+        margin: 12px 0 0;
+    }
 }
 
 /* Back to Top Display */
@@ -804,43 +895,6 @@ h3 {
         width: 150px;
     }
 }
-
-/* =========================
-  MOBILE (RESOURCES)
-========================= */
-
-@media (max-width: 700px) {
-
-    .resources-section {
-        padding: 60px 20px;
-    }
-
-    .resources-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 20px;
-    }
-
-    .resource-overlay {
-        display: none;
-    }
-
-    .resource-card:hover .resource-image img {
-        transform: none;
-    }
-
-    .mobile-resource-name {
-        display: block;
-
-        text-align: center;
-
-        font-family: 'Playfair Display', serif;
-        font-size: 1.1rem;
-        color: #425A4E;
-        margin: 12px 0 0;
-    }
-}
-
-
 /* =========================
    ANIMATIONS
 ========================= */
