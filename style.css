@@ -1128,7 +1128,6 @@ a:hover {
     /* FADE IN */
     opacity: 0;
     animation: curriculumFade 1s ease forwards;
-    animation-delay: 0.6s;
 }
 
 @keyframes curriculumFade {
