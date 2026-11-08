@@ -1124,8 +1124,14 @@ a:hover {
     color: #fff;
     padding: 80px 20px;
     min-height: 60vh;
+}
 
-    /* FADE IN */
+.curriculum-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    
+   /* FADE IN */
     opacity: 0;
     animation: curriculumFade 1s ease forwards;
 }
@@ -1140,12 +1146,6 @@ a:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.curriculum-intro {
-    max-width: 800px;
-    margin: 0 auto 50px;
-    text-align: center;
 }
 
 .curriculum-intro h2 {
