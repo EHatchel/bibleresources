@@ -1388,6 +1388,7 @@ a:hover {
     object-fit:contain;
 
 }
+
 /* =========================
    PREVIOUSLY COMPLETED BOOKS
 ========================= */
@@ -1396,6 +1397,23 @@ a:hover {
     max-width: 700px;
     margin: 45px auto 70px;
     padding: 0 20px;
+
+    /* FADE IN */
+    opacity: 0;
+    animation: completedBooksFade 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes completedBooksFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .completed-books-header {
